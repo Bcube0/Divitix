@@ -72,3 +72,81 @@ document.addEventListener('click', (e) => {
     hamburger.classList.remove('active');
   }
 });
+
+// Interactive 3D tilt effect for service cards. This adds an extra layer of
+// engagement by tilting cards based on the mouse position. When the mouse
+// leaves the card, the transform resets. Note: hover translation defined
+// in CSS will be overridden while moving the mouse.
+document.querySelectorAll('.service-card').forEach((card) => {
+  card.addEventListener('mousemove', (e) => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width / 2;
+    const y = e.clientY - rect.top - rect.height / 2;
+    const rotateX = (y / rect.height) * -10;
+    const rotateY = (x / rect.width) * 10;
+    card.style.transform = `translateY(-5px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+  });
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = '';
+  });
+});
+
+// Automatically highlight the correct navigation link based on the current page
+// and handle user clicks to update the active state. Without this logic the
+// "active" class set in the HTML can become stale when navigating between
+// pages or using anchors. This function inspects the current URL path and
+// applies the active class to the matching link. It also binds click
+// handlers so that clicking a link will highlight it and clear other
+// highlights. The logic runs after the DOM is fully loaded.
+function setActiveNavLink() {
+  const navLinks = document.querySelectorAll('.nav-link');
+  const path = window.location.pathname;
+
+  // Remove any existing active classes first
+  navLinks.forEach((link) => link.classList.remove('active'));
+
+  // Decide which section of the site we are currently viewing based on the path.
+  // When browsing the site locally (file protocol) the pathname will include
+  // the full file system path (e.g. "/home/oai/share/website/index.html"). When
+  // deployed on a server it will look like "/services/" or "/contact/".
+  let activeKeyword;
+  if (path.includes('services')) {
+    activeKeyword = 'services';
+  } else if (path.includes('contact')) {
+    activeKeyword = 'contact';
+  } else {
+    // Default to home for everything else (index page and anchor views)
+    activeKeyword = 'home';
+  }
+
+  // Apply the active class based on the chosen keyword. Nav links are
+  // annotated with data-page attributes such as "home", "services" and
+  // "contact" to make matching robust regardless of file paths. If the
+  // link's data-page matches the active keyword, it should be highlighted.
+  navLinks.forEach((link) => {
+    const page = link.dataset.page;
+    if (page === activeKeyword) {
+      link.classList.add('active');
+    }
+  });
+
+  // When a nav link is clicked on the same page (e.g. anchors), manually set
+  // the active state. This ensures immediate feedback on the home page when
+  // navigating to sections like #choose or #about.
+  navLinks.forEach((link) => {
+    link.addEventListener('click', function () {
+      navLinks.forEach((ln) => ln.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+}
+
+// Initialise the navigation active state when the DOM is ready. If the
+// DOMContentLoaded event has already fired (for example when the script is
+// placed at the end of the body), call the function immediately. Otherwise
+// wait until the DOM has loaded.
+if (document.readyState !== 'loading') {
+  setActiveNavLink();
+} else {
+  document.addEventListener('DOMContentLoaded', setActiveNavLink);
+}

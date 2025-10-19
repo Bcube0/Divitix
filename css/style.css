@@ -10,7 +10,11 @@ html {
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  /* Use a modern, highly readable typeface and enable font smoothing for
+     crisp, anti‑aliased text. */
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   background-color: #0d0d23;
   color: #ffffff;
   line-height: 1.6;
@@ -109,6 +113,46 @@ img {
   justify-content: center;
   text-align: center;
   color: #ffffff;
+  overflow: hidden;
+}
+
+/* Star field overlay for the hero to add dynamic interest */
+.hero::before, .page-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background-image:
+    radial-gradient(#ffffff 1px, transparent 1px),
+    radial-gradient(#ffffff 1px, transparent 1px);
+  background-size: 3px 3px, 5px 5px;
+  background-position: 0 0, 2px 2px;
+  opacity: 0.15;
+  animation: moveStars 60s linear infinite;
+  z-index: 0;
+}
+
+@keyframes moveStars {
+  from { transform: translateX(0) translateY(0); }
+  to   { transform: translateX(-50%) translateY(-50%); }
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(13, 13, 35, 0.5);
+  backdrop-filter: blur(2px);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
 }
 
 .hero-overlay {
@@ -340,7 +384,10 @@ img {
   padding: 2rem;
   border-radius: var(--border-radius, 8px);
   text-align: center;
-  transition: transform 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s;
+  /* Prepare for 3D tilt effect */
+  transform-style: preserve-3d;
+  perspective: 800px;
 }
 
 .service-card i {
@@ -372,7 +419,9 @@ img {
 }
 
 .service-card:hover {
-  transform: translateY(-5px);
+  /* Lift and tilt the card on hover to create depth */
+  transform: translateY(-5px) rotateX(-4deg) rotateY(4deg);
+  box-shadow: 0 10px 20px rgba(124, 111, 249, 0.2);
 }
 
 /* Portfolio Section */
@@ -424,6 +473,93 @@ img {
 
 .portfolio-item:hover .portfolio-overlay {
   opacity: 1;
+}
+
+/* Testimonials Section */
+.testimonials {
+  background-color: #0f1033;
+  padding: 6rem 0;
+}
+
+.testimonials-slider {
+  /* Display testimonials in a responsive grid rather than sliding to improve
+     readability and layout consistency. */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  overflow: hidden;
+}
+
+@keyframes slideTestimonials {
+  0% { transform: translateX(0); }
+  33% { transform: translateX(-100%); }
+  66% { transform: translateX(-200%); }
+  100% { transform: translateX(0); }
+}
+
+.testimonial-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  border-radius: var(--border-radius, 8px);
+  text-align: center;
+  color: #dcdce4;
+  transition: transform 0.3s, box-shadow 0.3s;
+  /* Grid item should fill its column */
+  width: 100%;
+}
+
+.testimonial-card .quote {
+  font-size: 1.2rem;
+  font-style: italic;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.testimonial-card .client-name {
+  font-weight: 600;
+  color: #7c6ff9;
+  font-size: 1rem;
+}
+
+/* Resources Section */
+.resources {
+  background-color: #0d0d23;
+  padding: 6rem 0;
+}
+
+.resources-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.resource-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  border-radius: var(--border-radius, 8px);
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.resource-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(124, 111, 249, 0.2);
+}
+
+.resource-card .emoji {
+  font-size: 2rem;
+  margin-bottom: 0.6rem;
+}
+
+.resource-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.6rem;
+}
+
+.resource-card p {
+  font-size: 0.95rem;
+  color: #c0c0d0;
 }
 
 /* CTA Section */

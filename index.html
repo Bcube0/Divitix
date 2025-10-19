@@ -16,6 +16,11 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <!-- Additional font for improved readability -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <!-- Font Awesome -->
     <link
       rel="stylesheet"
@@ -43,14 +48,14 @@
               a real server the index file will be served automatically, giving
               cleaner URLs (e.g. dvitix.com/ instead of dvitix.com/index.html).
             -->
-            <li><a href="/" class="nav-link active">Home</a></li>
+            <li><a href="/" class="nav-link" data-page="home">Home</a></li>
             <!-- Point to the directory rather than the HTML file. Most web
                  servers will serve the index file automatically, so visitors
                  see dvitix.com/services/ instead of dvitix.com/services.html. -->
-            <li><a href="services/index.html" class="nav-link">Services</a></li>
-            <li><a href="#choose" class="nav-link">Why&nbsp;Us</a></li>
-            <li><a href="#about" class="nav-link">About</a></li>
-            <li><a href="contact/index.html" class="nav-link">Contact</a></li>
+            <li><a href="services/index.html" class="nav-link" data-page="services">Services</a></li>
+            <li><a href="#choose" class="nav-link" data-page="whyus">Why&nbsp;Us</a></li>
+            <li><a href="#about" class="nav-link" data-page="about">About</a></li>
+            <li><a href="contact/index.html" class="nav-link" data-page="contact">Contact</a></li>
           </ul>
         </nav>
         <div class="hamburger" id="hamburger">
@@ -69,6 +74,67 @@
           Building innovative digital solutions that connect people and businesses ✨.
         </p>
         <a href="services/index.html" class="btn btn-primary">Discover Our Services</a>
+      </div>
+    </section>
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+      <div class="container">
+        <h2 class="section-title reveal fade-in-up">What Our Clients Say</h2>
+        <div class="testimonials-slider">
+          <div class="testimonial-card">
+            <p class="quote">
+              "Dvitix delivered our website on time and beyond expectations. Their
+              team guided us through every step and the results were stunning."
+            </p>
+            <h4 class="client-name">– Emily&nbsp;R.</h4>
+          </div>
+          <div class="testimonial-card">
+            <p class="quote">
+              "Working with Dvitix was a pleasure. They are creative,
+              responsive and brought our vision to life with ease."
+            </p>
+            <h4 class="client-name">– Adam&nbsp;T.</h4>
+          </div>
+          <div class="testimonial-card">
+            <p class="quote">
+              "Our traffic grew by 50% after the relaunch thanks to their SEO
+              expertise and modern design approach."
+            </p>
+            <h4 class="client-name">– Sarah&nbsp;K.</h4>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Resources Section -->
+    <section class="resources" id="resources">
+      <div class="container">
+        <h2 class="section-title reveal fade-in-up">Resources &amp; Insights</h2>
+        <div class="resources-grid">
+          <div class="resource-card reveal fade-in-up">
+            <div class="emoji">📘</div>
+            <h3>Website Tips</h3>
+            <p>
+              Discover best practices for designing engaging websites that
+              convert visitors into clients.
+            </p>
+          </div>
+          <div class="resource-card reveal fade-in-up" data-delay="0.1">
+            <div class="emoji">🔧</div>
+            <h3>SEO Essentials</h3>
+            <p>
+              Learn the fundamentals of search engine optimisation to drive
+              organic traffic and improve rankings.
+            </p>
+          </div>
+          <div class="resource-card reveal fade-in-up" data-delay="0.2">
+            <div class="emoji">📈</div>
+            <h3>Digital Growth</h3>
+            <p>
+              Explore strategies for growing your business online through
+              targeted campaigns and analytics.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
     <!-- Stats Section -->
