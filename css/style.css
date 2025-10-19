@@ -10,9 +10,9 @@ html {
 }
 
 body {
-  /* Use a modern, highly readable typeface and enable font smoothing for
-     crisp, anti‑aliased text. */
-  font-family: 'Inter', sans-serif;
+  /* Use Manrope, a modern geometric sans-serif that offers high legibility.
+     Enabling font smoothing ensures crisp, anti‑aliased text on all devices. */
+  font-family: 'Manrope', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #0d0d23;
@@ -182,6 +182,121 @@ img {
   font-weight: 300;
   margin-bottom: 2rem;
   color: #dcdce4;
+}
+
+/* Showcase Section */
+.showcase {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  overflow: hidden;
+}
+
+.slideshow {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  background-position: center;
+  background-size: cover;
+}
+
+.slide.active {
+  opacity: 1;
+  z-index: 2;
+}
+
+.slide .overlay {
+  position: absolute;
+  bottom: 20%;
+  left: 10%;
+  max-width: 50%;
+  z-index: 3;
+}
+
+.slide .overlay h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.slide .overlay p {
+  font-size: 1rem;
+  color: #f0e6ff;
+}
+
+.slide .overlay .btn {
+  margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+  .showcase {
+    height: 50vh;
+  }
+  .slide .overlay {
+    bottom: 10%;
+    left: 5%;
+    max-width: 90%;
+  }
+  .slide .overlay h2 {
+    font-size: 1.5rem;
+  }
+  .slide .overlay p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Story Section */
+.story {
+  background-color: #0f1033;
+  padding: 6rem 0;
+}
+
+.story-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.story-item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+}
+
+.story-item:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.story-img,
+.story-content {
+  flex: 1 1 300px;
+}
+
+.story-img img {
+  width: 100%;
+  border-radius: var(--border-radius, 8px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.story-content h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.story-content p {
+  font-size: 1rem;
+  color: #dcdce4;
+  line-height: 1.7;
 }
 
 /* Buttons */

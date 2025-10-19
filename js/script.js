@@ -114,6 +114,10 @@ function setActiveNavLink() {
     activeKeyword = 'services';
   } else if (path.includes('contact')) {
     activeKeyword = 'contact';
+  } else if (path.includes('about')) {
+    activeKeyword = 'about';
+  } else if (path.includes('why-us')) {
+    activeKeyword = 'whyus';
   } else {
     // Default to home for everything else (index page and anchor views)
     activeKeyword = 'home';
@@ -150,3 +154,25 @@ if (document.readyState !== 'loading') {
 } else {
   document.addEventListener('DOMContentLoaded', setActiveNavLink);
 }
+
+// Simple slideshow for the showcase section. The slides automatically transition
+// every 5 seconds. Each slide has the class "slide" and the currently visible
+// slide carries the class "active". When there is only one slide, the
+// slideshow is skipped.
+(function () {
+  const slideshow = document.querySelector('.slideshow');
+  if (!slideshow) return;
+  const slides = slideshow.querySelectorAll('.slide');
+  if (slides.length <= 1) return;
+  let current = 0;
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.toggle('active', i === index);
+    });
+  }
+  function next() {
+    current = (current + 1) % slides.length;
+    showSlide(current);
+  }
+  setInterval(next, 5000);
+})();

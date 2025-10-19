@@ -12,13 +12,9 @@
       href="https://fonts.gstatic.com"
       crossorigin
     />
+    <!-- Use Manrope for a softer, rounded aesthetic and improved clarity -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Additional font for improved readability -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <!-- Font Awesome -->
@@ -53,8 +49,8 @@
                  servers will serve the index file automatically, so visitors
                  see dvitix.com/services/ instead of dvitix.com/services.html. -->
             <li><a href="services/index.html" class="nav-link" data-page="services">Services</a></li>
-            <li><a href="#choose" class="nav-link" data-page="whyus">Why&nbsp;Us</a></li>
-            <li><a href="#about" class="nav-link" data-page="about">About</a></li>
+            <li><a href="why-us/index.html" class="nav-link" data-page="whyus">Why&nbsp;Us</a></li>
+            <li><a href="about/index.html" class="nav-link" data-page="about">About</a></li>
             <li><a href="contact/index.html" class="nav-link" data-page="contact">Contact</a></li>
           </ul>
         </nav>
@@ -74,6 +70,32 @@
           Building innovative digital solutions that connect people and businesses ✨.
         </p>
         <a href="services/index.html" class="btn btn-primary">Discover Our Services</a>
+      </div>
+    </section>
+    <!-- Showcase Section -->
+    <section class="showcase">
+      <div class="slideshow">
+        <div class="slide active" style="background-image: url('images/portfolio1.png')">
+          <div class="overlay">
+            <h2>Experience Limitless Creativity</h2>
+            <p>Our designs blend aesthetics and functionality to elevate your brand.</p>
+            <a href="services/index.html" class="btn btn-primary">Explore Services</a>
+          </div>
+        </div>
+        <div class="slide" style="background-image: url('images/portfolio2.png')">
+          <div class="overlay">
+            <h2>Scaling Businesses Digitally</h2>
+            <p>Transform your online presence and connect with your audience.</p>
+            <a href="services/index.html" class="btn btn-primary">Grow with Us</a>
+          </div>
+        </div>
+        <div class="slide" style="background-image: url('images/portfolio3.png')">
+          <div class="overlay">
+            <h2>Innovation Meets Imagination</h2>
+            <p>We develop solutions that push boundaries and delight users.</p>
+            <a href="services/index.html" class="btn btn-primary">Start a Project</a>
+          </div>
+        </div>
       </div>
     </section>
     <!-- Testimonials Section -->
@@ -157,44 +179,47 @@
         </div>
       </div>
     </section>
-    <!-- About Section -->
-    <section class="about" id="about">
-      <div class="container about-grid">
-        <div class="about-text reveal fade-in-left">
-          <h2>🌟 Excellence in Product, Quality, and Service</h2>
-          <p>
-            At Dvitix, we combine cutting-edge technology with creativity to
-            deliver exceptional products, impeccable quality and unwavering
-            service. Whether you need a captivating website, a search-optimised
-            digital presence or a modern e-commerce store, our experts ensure
-            your business thrives in the modern era.
-          </p>
-          <a href="services/index.html" class="btn btn-secondary">Learn More</a>
-        </div>
-        <div class="about-features">
-          <div class="feature-card reveal fade-in-up" data-delay="0.1">
-            <div class="emoji">📦</div>
-            <h4>Products</h4>
-            <p>
-              We craft digital products that are intuitive, scalable and
-              user-centric, ensuring a seamless experience across all devices.
-            </p>
+    <!-- Storytelling Section -->
+    <section class="story">
+      <div class="container">
+        <h2 class="section-title reveal fade-in-up">Our Story</h2>
+        <div class="story-grid">
+          <div class="story-item reveal fade-in-left">
+            <div class="story-img">
+              <img src="images/portfolio1.png" alt="Crafted with passion" />
+            </div>
+            <div class="story-content">
+              <h3>Crafted with Passion</h3>
+              <p>
+                Each project begins with discovery and inspiration. We immerse
+                ourselves in your brand to craft unique experiences that resonate
+                deeply with your audience.
+              </p>
+            </div>
           </div>
-          <div class="feature-card reveal fade-in-up" data-delay="0.2">
-            <div class="emoji">✅</div>
-            <h4>Quality</h4>
-            <p>
-              Our rigorous testing and continuous improvement processes
-              guarantee quality that exceeds expectations.
-            </p>
+          <div class="story-item reveal fade-in-right">
+            <div class="story-img">
+              <img src="images/portfolio2.png" alt="Engineered for performance" />
+            </div>
+            <div class="story-content">
+              <h3>Engineered for Performance</h3>
+              <p>
+                Our developers build robust, scalable solutions using modern
+                technologies, ensuring speed and reliability across devices.
+              </p>
+            </div>
           </div>
-          <div class="feature-card reveal fade-in-up" data-delay="0.3">
-            <div class="emoji">🤝</div>
-            <h4>Service</h4>
-            <p>
-              Exceptional service underpins everything we do. We partner with
-              you every step of the way, from ideation to launch and beyond.
-            </p>
+          <div class="story-item reveal fade-in-left">
+            <div class="story-img">
+              <img src="images/portfolio3.png" alt="Tailored for you" />
+            </div>
+            <div class="story-content">
+              <h3>Tailored Just for You</h3>
+              <p>
+                We believe in personalisation. By aligning design and strategy to
+                your goals, we create digital experiences that feel truly yours.
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -243,70 +268,7 @@
         </div>
       </div>
     </section>
-    <!-- Why Choose Section -->
-    <section class="choose" id="choose">
-      <div class="container">
-        <h2 class="section-title reveal fade-in-up">Why Choose&nbsp;Dvitix</h2>
-        <div class="choose-grid">
-          <div class="choose-item reveal fade-in-left">
-            <div class="emoji">🤝</div>
-            <h3>Personalized Approach</h3>
-            <p>
-              We work closely with you to understand your goals and create bespoke
-              solutions that reflect your vision.
-            </p>
-          </div>
-          <div class="choose-item reveal fade-in-up">
-            <div class="emoji">🚀</div>
-            <h3>Innovative Tech</h3>
-            <p>
-              Leveraging cutting‑edge technology and micro‑interactions to build
-              future‑ready digital experiences.
-            </p>
-          </div>
-          <div class="choose-item reveal fade-in-right">
-            <div class="emoji">💡</div>
-            <h3>Transparent Pricing</h3>
-            <p>
-              Our packages are designed to deliver value without surprises, with
-              clear pricing and flexible options.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Process Section -->
-    <section class="process" id="process">
-      <div class="container">
-        <h2 class="section-title reveal fade-in-up">Our Process</h2>
-        <div class="process-grid">
-          <!-- Discovery -->
-          <div class="process-item reveal fade-in-left">
-            <div class="emoji">🔍</div>
-            <h3>Discovery</h3>
-            <p>We start by listening. Through workshops and research, we learn about your goals and audience.</p>
-          </div>
-          <!-- Design -->
-          <div class="process-item reveal fade-in-up">
-            <div class="emoji">🎨</div>
-            <h3>Design</h3>
-            <p>Our designers craft intuitive user experiences and striking interfaces tailored to your brand.</p>
-          </div>
-          <!-- Development -->
-          <div class="process-item reveal fade-in-up" data-delay="0.1">
-            <div class="emoji">💻</div>
-            <h3>Development</h3>
-            <p>We build robust, scalable websites using modern technologies and best practices.</p>
-          </div>
-          <!-- Launch -->
-          <div class="process-item reveal fade-in-right" data-delay="0.2">
-            <div class="emoji">🚀</div>
-            <h3>Launch &amp; Beyond</h3>
-            <p>After launch, we monitor performance, optimise and grow your digital presence.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+    <!-- The Why Us and Process sections have been moved to their own page -->
     <!-- Call to Action -->
     <section class="cta">
       <div class="container cta-content reveal scale-in">
@@ -334,7 +296,8 @@
             <!-- Use cleaner URLs by linking to directories instead of .html files. -->
             <li><a href="/">Home</a></li>
             <li><a href="services/index.html">Services</a></li>
-            <li><a href="#choose">Why&nbsp;Us</a></li>
+            <li><a href="why-us/index.html">Why&nbsp;Us</a></li>
+            <li><a href="about/index.html">About</a></li>
             <li><a href="contact/index.html">Contact</a></li>
           </ul>
         </div>
