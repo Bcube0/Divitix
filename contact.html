@@ -23,6 +23,8 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="css/style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   </head>
   <body>
     <!-- Header -->
@@ -48,7 +50,7 @@
       </div>
     </header>
     <!-- Page Hero -->
-    <section class="page-hero">
+    <section class="page-hero parallax-hero">
       <div class="container">
         <h1>Contact Us</h1>
         <p>We'd love to hear about your next big project.</p>
@@ -57,15 +59,13 @@
     <!-- Contact Section -->
     <section class="contact-section">
       <div class="container contact-grid">
-        <div class="contact-info reveal">
+        <div class="contact-info reveal fade-in-left">
           <h2>Get in Touch</h2>
           <p>
             Send us a message or reach out through our contact details below. Our
             team will respond promptly to discuss your project.
           </p>
           <ul class="contact-details">
-            <!-- Updated contact details to be more realistic. These details are
-            hypothetical examples and do not correspond to a real company. -->
             <li><i class="fas fa-envelope"></i> hello@dvitixdigital.com</li>
             <li><i class="fas fa-phone"></i> +61 (02) 8000 1234</li>
             <li>
@@ -73,12 +73,11 @@
               Street, Sydney NSW&nbsp;2000
             </li>
           </ul>
-          <div class="map-placeholder">
-            <!-- Placeholder map -->
-            <p>Map loading…</p>
+          <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3312.927962682!2d151.206889915209!3d-33.867486980661!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12ae401e0c8d3d%3A0x9c5c8d8d8d8d8d8d!2sSydney%20NSW%202000%2C%20Australia!5e0!3m2!1sen!2sau!4v1729345678901" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
         </div>
-        <div class="contact-form reveal">
+        <div class="contact-form reveal fade-in-right">
           <form action="#" method="post" onsubmit="return false;">
             <div class="input-group">
               <input type="text" id="name" required />
@@ -103,7 +102,7 @@
     </section>
     <!-- CTA -->
     <section class="cta">
-      <div class="container cta-content reveal">
+      <div class="container cta-content reveal scale-in">
         <h2>Let’s Work Together</h2>
         <p>
           Ready to bring your vision to life? Our team of experts is here to
