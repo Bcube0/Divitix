@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dvitix Packages – Web Design & SEO</title>
+    <title>Dvitix Packages – Web Design &amp; SEO</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
       rel="preconnect"
@@ -22,22 +22,26 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   </head>
   <body>
     <!-- Header -->
     <header class="header">
       <div class="container nav-container">
         <div class="logo">
-          <a href="index.html">Dvitix</a>
+          <!-- Link back to the home page using a relative path so that the
+               website functions correctly when viewed from the file system. -->
+          <a href="../index.html">Dvitix</a>
         </div>
         <nav class="nav" id="nav-menu">
           <ul class="nav-list">
-            <li><a href="index.html" class="nav-link">Home</a></li>
-            <li><a href="services.html" class="nav-link active">Services</a></li>
-            <li><a href="index.html#choose" class="nav-link">Why&nbsp;Us</a></li>
-            <li><a href="index.html#about" class="nav-link">About</a></li>
-            <li><a href="contact.html" class="nav-link">Contact</a></li>
+            <li><a href="../index.html" class="nav-link">Home</a></li>
+            <li><a href="index.html" class="nav-link active">Services</a></li>
+            <li><a href="../index.html#choose" class="nav-link">Why&nbsp;Us</a></li>
+            <li><a href="../index.html#about" class="nav-link">About</a></li>
+            <li><a href="../contact/index.html" class="nav-link">Contact</a></li>
           </ul>
         </nav>
         <div class="hamburger" id="hamburger">
@@ -48,7 +52,7 @@
       </div>
     </header>
     <!-- Page Hero -->
-    <section class="page-hero">
+    <section class="page-hero parallax-hero">
       <div class="container">
         <h1>Our Packages</h1>
         <p>Flexible web design and SEO plans tailored for startups and small businesses.</p>
@@ -58,24 +62,24 @@
     <!-- Basic Web Package -->
     <section class="service-detail" id="basic">
       <div class="container detail-grid">
-        <div class="detail-icon">
-          <i class="fas fa-laptop-code reveal"></i>
+        <div class="detail-icon reveal fade-in-up">
+          <i class="fas fa-laptop-code"></i>
         </div>
-        <div class="detail-content reveal">
-          <h2>Basic Web Package</h2>
+        <div class="detail-content reveal fade-in-up" data-delay="0.2">
+          <h2>🧑‍💻 Basic Web Package</h2>
           <p>
-            An affordable entry‑level package ideal for sole traders and startups. We
+            An affordable entry-level package ideal for sole traders and startups. We
             design and build a simple yet professional website that reflects
-            your brand and showcases your offerings. According to Nirmal’s 2025
-            guide, basic websites with 1–3 pages typically cost between $1,000
+            your brand and showcases your offerings. According to 2025 guides,
+            basic websites with 1–3 pages typically cost between $1,000
             and $3,000 AUD【248410573291433†L41-L46】.
           </p>
           <ul>
-            <li>Template‑based design customised with your branding</li>
+            <li>Template-based design customised with your branding</li>
             <li>Responsive layout compatible with mobile and desktop</li>
             <li>Home, About and Contact pages</li>
             <li>Contact form with spam protection</li>
-            <li>Search‑engine‑friendly setup</li>
+            <li>Search-engine-friendly setup</li>
           </ul>
         </div>
       </div>
@@ -83,23 +87,23 @@
     <!-- Standard Web + SEO Package -->
     <section class="service-detail" id="standard">
       <div class="container detail-grid">
-        <div class="detail-icon">
-          <i class="fas fa-layer-group reveal"></i>
+        <div class="detail-icon reveal fade-in-up">
+          <i class="fas fa-layer-group"></i>
         </div>
-        <div class="detail-content reveal">
-          <h2>Standard Web + SEO Package</h2>
+        <div class="detail-content reveal fade-in-up" data-delay="0.2">
+          <h2>🛠️ Standard Web + SEO Package</h2>
           <p>
             Crafted for growing small businesses, this package delivers a
             bespoke website coupled with foundational SEO. Custom sites with
-            5–10 pages usually range from $3,000 to $8,000 AUD【248410573291433†L44-L45】. To
-            build authority online, we include an initial on‑page SEO setup and
+            5–10 pages usually range from $3,000 to $8,000 AUD【248410573291433†L41-L46】. To
+            build authority online, we include an initial on-page SEO setup and
             offer ongoing optimisation starting from $1,200 per month【805660847841996†L137-L145】.
           </p>
           <ul>
             <li>Unique design tailored to your brand, with up to 10 pages</li>
             <li>Blog or news section for regular content updates</li>
             <li>Advanced contact and enquiry forms</li>
-            <li>On‑page SEO optimisation and keyword research</li>
+            <li>On-page SEO optimisation and keyword research</li>
             <li>CMS training and documentation</li>
           </ul>
         </div>
@@ -108,21 +112,21 @@
     <!-- SEO Booster Plan -->
     <section class="service-detail" id="seo">
       <div class="container detail-grid">
-        <div class="detail-icon">
-          <i class="fas fa-chart-line reveal"></i>
+        <div class="detail-icon reveal fade-in-up">
+          <i class="fas fa-chart-line"></i>
         </div>
-        <div class="detail-content reveal">
-          <h2>SEO Booster Plan</h2>
+        <div class="detail-content reveal fade-in-up" data-delay="0.2">
+          <h2>🚀 SEO Booster Plan</h2>
           <p>
             A recurring optimisation service that amplifies your search
-            visibility. Ideal for local service providers and small e‑commerce
+            visibility. Ideal for local service providers and small e-commerce
             stores. Industry benchmarks suggest small business SEO packages run
             between $1,200 and $2,500 AUD per month【805660847841996†L137-L145】.
           </p>
           <ul>
             <li>Monthly keyword research and strategy updates</li>
-            <li>On‑page and technical optimisation</li>
-            <li>High‑quality link building</li>
+            <li>On-page and technical optimisation</li>
+            <li>High-quality link building</li>
             <li>Content optimisation and publishing guidance</li>
             <li>Comprehensive performance reporting each month</li>
           </ul>
@@ -131,10 +135,10 @@
     </section>
     <!-- CTA -->
     <section class="cta">
-      <div class="container cta-content reveal">
+      <div class="container cta-content reveal scale-in">
         <h2>Have an idea?</h2>
         <p>Let’s build something amazing together. Reach out to our team today.</p>
-        <a href="contact.html" class="btn btn-primary">Get in Touch</a>
+        <a href="../contact/index.html" class="btn btn-primary">Get in Touch</a>
       </div>
     </section>
     <!-- Footer -->
@@ -150,10 +154,10 @@
         <div class="footer-links">
           <h4>Links</h4>
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="index.html#portfolio">Portfolio</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../services/index.html">Services</a></li>
+            <li><a href="../index.html#choose">Why&nbsp;Us</a></li>
+            <li><a href="../contact/index.html">Contact</a></li>
           </ul>
         </div>
         <div class="footer-social">
@@ -170,6 +174,6 @@
         <p>&copy; 2025 Dvitix Digital Studio. All rights reserved.</p>
       </div>
     </footer>
-    <script src="js/script.js"></script>
+    <script src="../js/script.js"></script>
   </body>
 </html>

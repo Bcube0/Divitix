@@ -255,6 +255,13 @@ img {
   margin-bottom: 0.6rem;
 }
 
+/* Emoji styling for feature cards */
+.feature-card .emoji {
+  font-size: 2rem;
+  margin-bottom: 0.6rem;
+  display: block;
+}
+
 .feature-card h4 {
   font-size: 1.3rem;
   margin-bottom: 0.6rem;
@@ -285,6 +292,47 @@ img {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
+}
+
+/* Why Choose Section */
+.choose {
+  background-color: #0f1033;
+  padding: 6rem 0;
+}
+
+.choose-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.choose-item {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  border-radius: var(--border-radius, 8px);
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.choose-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(124, 111, 249, 0.2);
+}
+
+.choose-item .emoji {
+  font-size: 2.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.choose-item h3 {
+  margin-bottom: 0.8rem;
+  font-size: 1.4rem;
+}
+
+.choose-item p {
+  font-size: 0.95rem;
+  color: #c0c0d0;
+  margin: 0;
 }
 
 .service-card {
@@ -402,6 +450,53 @@ img {
   background-color: #0f1033;
   padding: 4rem 0 2rem;
   color: #c0c0d0;
+}
+
+/* Process Section */
+.process {
+  background-color: #0f1033;
+  padding: 6rem 0;
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.process-item {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: var(--border-radius, 8px);
+  padding: 2rem;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.process-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(124, 111, 249, 0.2);
+}
+
+.process-item .emoji {
+  font-size: 2rem;
+  margin-bottom: 0.8rem;
+}
+
+.process-item h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.6rem;
+}
+
+.process-item p {
+  font-size: 0.95rem;
+  color: #c0c0d0;
+}
+
+@media (max-width: 768px) {
+  .process-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .footer-grid {
@@ -661,7 +756,7 @@ img {
   .services-grid {
     grid-template-columns: 1fr;
   }
-  .portfolio-grid {
+  .choose-grid {
     grid-template-columns: 1fr;
   }
 }
