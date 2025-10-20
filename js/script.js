@@ -77,14 +77,14 @@ document.addEventListener('click', (e) => {
 // engagement by tilting cards based on the mouse position. When the mouse
 // leaves the card, the transform resets. Note: hover translation defined
 // in CSS will be overridden while moving the mouse.
-document.querySelectorAll('.service-card').forEach((card) => {
+document.querySelectorAll('.package-card').forEach((card) => {
   card.addEventListener('mousemove', (e) => {
     const rect = card.getBoundingClientRect();
     const x = e.clientX - rect.left - rect.width / 2;
     const y = e.clientY - rect.top - rect.height / 2;
-    const rotateX = (y / rect.height) * -10;
-    const rotateY = (x / rect.width) * 10;
-    card.style.transform = `translateY(-5px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    const rotateX = (y / rect.height) * -8;
+    const rotateY = (x / rect.width) * 8;
+    card.style.transform = `translateY(-6px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
   });
   card.addEventListener('mouseleave', () => {
     card.style.transform = '';
@@ -99,50 +99,10 @@ document.querySelectorAll('.service-card').forEach((card) => {
 // handlers so that clicking a link will highlight it and clear other
 // highlights. The logic runs after the DOM is fully loaded.
 function setActiveNavLink() {
-  const navLinks = document.querySelectorAll('.nav-link');
-  const path = window.location.pathname;
-
-  // Remove any existing active classes first
-  navLinks.forEach((link) => link.classList.remove('active'));
-
-  // Decide which section of the site we are currently viewing based on the path.
-  // When browsing the site locally (file protocol) the pathname will include
-  // the full file system path (e.g. "/home/oai/share/website/index.html"). When
-  // deployed on a server it will look like "/services/" or "/contact/".
-  let activeKeyword;
-  if (path.includes('services')) {
-    activeKeyword = 'services';
-  } else if (path.includes('contact')) {
-    activeKeyword = 'contact';
-  } else if (path.includes('about')) {
-    activeKeyword = 'about';
-  } else if (path.includes('why-us')) {
-    activeKeyword = 'whyus';
-  } else {
-    // Default to home for everything else (index page and anchor views)
-    activeKeyword = 'home';
-  }
-
-  // Apply the active class based on the chosen keyword. Nav links are
-  // annotated with data-page attributes such as "home", "services" and
-  // "contact" to make matching robust regardless of file paths. If the
-  // link's data-page matches the active keyword, it should be highlighted.
-  navLinks.forEach((link) => {
-    const page = link.dataset.page;
-    if (page === activeKeyword) {
-      link.classList.add('active');
-    }
-  });
-
-  // When a nav link is clicked on the same page (e.g. anchors), manually set
-  // the active state. This ensures immediate feedback on the home page when
-  // navigating to sections like #choose or #about.
-  navLinks.forEach((link) => {
-    link.addEventListener('click', function () {
-      navLinks.forEach((ln) => ln.classList.remove('active'));
-      this.classList.add('active');
-    });
-  });
+  // Dynamic navigation highlighting is disabled. Each page now defines its
+  // active link statically in the markup. This function intentionally does
+  // nothing to avoid overriding those classes.
+  return;
 }
 
 // Initialise the navigation active state when the DOM is ready. If the
@@ -177,14 +137,15 @@ if (document.readyState !== 'loading') {
   setInterval(next, 5000);
 })();
 
-// Animate the puzzle pieces into place when the puzzle grid enters the viewport.
+// Animate the mosaic pieces into place when the mosaic grid enters the viewport.
 // Each piece uses CSS custom properties --tx and --ty to define its starting
 // offset. When 'assembled' is added, the pieces translate to (0,0) and fade in.
 (() => {
-  const puzzleGrid = document.querySelector('.puzzle-grid');
-  if (!puzzleGrid) return;
-  const pieces = puzzleGrid.querySelectorAll('.puzzle-piece');
-  const puzzleObserver = new IntersectionObserver((entries) => {
+  // Use mosaic grid on the new home page instead of the old expertise grid
+  const mosaicGrid = document.querySelector('.mosaic-grid');
+  if (!mosaicGrid) return;
+  const pieces = mosaicGrid.querySelectorAll('.mosaic-piece');
+  const mosaicObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         pieces.forEach((piece, index) => {
@@ -192,11 +153,11 @@ if (document.readyState !== 'loading') {
             piece.classList.add('assembled');
           }, index * 200);
         });
-        puzzleObserver.unobserve(puzzleGrid);
+        mosaicObserver.unobserve(mosaicGrid);
       }
     });
   }, {
     threshold: 0.2,
   });
-  puzzleObserver.observe(puzzleGrid);
+  mosaicObserver.observe(mosaicGrid);
 })();

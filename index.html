@@ -4,20 +4,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dvitix Digital Studio – Innovative Solutions</title>
+    <title>Dvitix Digital Studio – Elevate Your Vision</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link
-      rel="preconnect"
-      href="https://fonts.gstatic.com"
-      crossorigin
-    />
-    <!-- Use Manrope for a softer, rounded aesthetic and improved clarity -->
-    <!-- Use Inter for modern, legible typography -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
     <!-- Font Awesome -->
     <link
       rel="stylesheet"
@@ -28,6 +19,7 @@
     />
     <!-- Stylesheet -->
     <link rel="stylesheet" href="css/style.css" />
+    <!-- GSAP (optional for scroll animations; not strictly required) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   </head>
@@ -36,21 +28,14 @@
     <header class="header">
       <div class="container nav-container">
         <div class="logo">
-          <a href="#">Dvitix</a>
+          <a href="#" data-page="home">Dvitix</a>
         </div>
         <nav class="nav" id="nav-menu">
           <ul class="nav-list">
-            <!--
-              Link to the root of the site instead of a specific file. When hosted on
-              a real server the index file will be served automatically, giving
-              cleaner URLs (e.g. dvitix.com/ instead of dvitix.com/index.html).
-            -->
-            <li><a href="/" class="nav-link" data-page="home">Home</a></li>
-            <!-- Point to the directory rather than the HTML file. Most web
-                 servers will serve the index file automatically, so visitors
-                 see dvitix.com/services/ instead of dvitix.com/services.html. -->
+            <!-- data-page attributes help the JS highlight the current page -->
+            <li><a href="index.html" class="nav-link active" data-page="home">Home</a></li>
             <li><a href="services/index.html" class="nav-link" data-page="services">Services</a></li>
-            <li><a href="why-us/index.html" class="nav-link" data-page="whyus">Why&nbsp;Us</a></li>
+            <li><a href="why-us/index.html" class="nav-link" data-page="whyus">Why Us</a></li>
             <li><a href="about/index.html" class="nav-link" data-page="about">About</a></li>
             <li><a href="contact/index.html" class="nav-link" data-page="contact">Contact</a></li>
           </ul>
@@ -63,335 +48,141 @@
       </div>
     </header>
     <!-- Hero Section -->
-    <section class="hero parallax-hero" id="home">
+    <section class="hero new-hero">
       <div class="hero-overlay"></div>
-      <div class="hero-content container reveal fade-in-up">
-        <h1 class="hero-title">Transforming Ideas into Reality 🚀</h1>
-        <p class="hero-subtitle">
-          Building innovative digital solutions that connect people and businesses ✨.
+      <div class="starfield"></div>
+      <div class="container hero-content">
+        <h1 class="hero-title reveal">Transforming Ideas into Digital Realities 🚀</h1>
+        <p class="hero-subtitle reveal" data-delay="0.1">
+          We craft immersive digital experiences that connect people and brands.
         </p>
-        <a href="services/index.html" class="btn btn-primary">Discover Our Services</a>
+        <a href="services/index.html" class="btn btn-primary reveal" data-delay="0.2">Explore Our Packages</a>
       </div>
     </section>
-    <!-- Showcase Section -->
-    <section class="showcase">
-      <div class="slideshow">
-        <div class="slide active" style="background-image: url('images/portfolio1.png')">
-          <div class="overlay">
-            <h2>Experience Limitless Creativity</h2>
-            <p>Our designs blend aesthetics and functionality to elevate your brand.</p>
-            <a href="services/index.html" class="btn btn-primary">Explore Services</a>
-          </div>
-        </div>
-        <div class="slide" style="background-image: url('images/portfolio2.png')">
-          <div class="overlay">
-            <h2>Scaling Businesses Digitally</h2>
-            <p>Transform your online presence and connect with your audience.</p>
-            <a href="services/index.html" class="btn btn-primary">Grow with Us</a>
-          </div>
-        </div>
-        <div class="slide" style="background-image: url('images/portfolio3.png')">
-          <div class="overlay">
-            <h2>Innovation Meets Imagination</h2>
-            <p>We develop solutions that push boundaries and delight users.</p>
-            <a href="services/index.html" class="btn btn-primary">Start a Project</a>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Testimonials Section -->
-    <section class="testimonials" id="testimonials">
+    <!-- Story Section -->
+    <section class="story" id="story">
       <div class="container">
-        <h2 class="section-title reveal fade-in-up">What Our Clients Say</h2>
-        <div class="testimonials-slider">
-          <div class="testimonial-card">
-            <p class="quote">
-              "Dvitix delivered our website on time and beyond expectations. Their
-              team guided us through every step and the results were stunning."
-            </p>
-            <h4 class="client-name">– Emily&nbsp;R.</h4>
-          </div>
-          <div class="testimonial-card">
-            <p class="quote">
-              "Working with Dvitix was a pleasure. They are creative,
-              responsive and brought our vision to life with ease."
-            </p>
-            <h4 class="client-name">– Adam&nbsp;T.</h4>
-          </div>
-          <div class="testimonial-card">
-            <p class="quote">
-              "Our traffic grew by 50% after the relaunch thanks to their SEO
-              expertise and modern design approach."
-            </p>
-            <h4 class="client-name">– Sarah&nbsp;K.</h4>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Resources Section -->
-    <section class="resources" id="resources">
-      <div class="container">
-        <h2 class="section-title reveal fade-in-up">Resources &amp; Insights</h2>
-        <div class="resources-grid">
-          <div class="resource-card reveal fade-in-up">
-            <div class="emoji">📘</div>
-            <h3>Website Tips</h3>
-            <p>
-              Discover best practices for designing engaging websites that
-              convert visitors into clients.
-            </p>
-          </div>
-          <div class="resource-card reveal fade-in-up" data-delay="0.1">
-            <div class="emoji">🔧</div>
-            <h3>SEO Essentials</h3>
-            <p>
-              Learn the fundamentals of search engine optimisation to drive
-              organic traffic and improve rankings.
-            </p>
-          </div>
-          <div class="resource-card reveal fade-in-up" data-delay="0.2">
-            <div class="emoji">📈</div>
-            <h3>Digital Growth</h3>
-            <p>
-              Explore strategies for growing your business online through
-              targeted campaigns and analytics.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Stats Section -->
-    <section class="stats">
-      <div class="container stats-grid">
-        <div class="stat-item reveal fade-in-left">
-          <i class="fas fa-briefcase"></i>
-          <h3 class="counter" data-target="5">0</h3>
-          <p>Completed Projects 🚀</p>
-        </div>
-        <div class="stat-item reveal fade-in-up">
-          <i class="fas fa-user-friends"></i>
-          <h3 class="counter" data-target="3">0</h3>
-          <p>Happy Clients 😊</p>
-        </div>
-        <div class="stat-item reveal fade-in-right">
-          <i class="fas fa-clock"></i>
-          <h3 class="counter" data-target="1">0</h3>
-          <p>Years in Business 🕒</p>
-        </div>
-      </div>
-    </section>
-    <!-- Story section removed: this narrative now appears on the About page -->
-    <!-- Storytelling Section -->
-    <section class="story-scroll">
-      <div class="container">
-        <h2 class="section-title reveal fade-in-up">Our Journey to Success</h2>
-        <div class="story-wrapper">
-          <div class="story-panel reveal fade-in-left">
-            <div class="story-icon">🌌</div>
-            <div class="story-text">
+        <h2 class="section-title reveal fade-in-up">Our Journey</h2>
+        <div class="timeline">
+          <div class="timeline-item reveal fade-in-left">
+            <div class="timeline-icon">🌱</div>
+            <div class="timeline-content">
               <h3>Dream &amp; Discover</h3>
-              <p>
-                Every great product starts with a bold idea. We collaborate to uncover
-                your vision, explore possibilities and set the foundation for an unforgettable
-                digital experience.
-              </p>
+              <p>We start by understanding your vision, goals and audience to unearth opportunities.</p>
             </div>
           </div>
-          <div class="story-panel reveal fade-in-right">
-            <div class="story-icon">🎨</div>
-            <div class="story-text">
+          <div class="timeline-item reveal fade-in-right" data-delay="0.1">
+            <div class="timeline-icon">🎨</div>
+            <div class="timeline-content">
               <h3>Design &amp; Refine</h3>
-              <p>
-                Our designers sketch, iterate and craft bespoke interfaces that balance
-                aesthetics with usability. We refine until every detail aligns with your brand.
-              </p>
+              <p>Our team sketches, prototypes and iterates until every pixel reflects your brand.</p>
             </div>
           </div>
-          <div class="story-panel reveal fade-in-left">
-            <div class="story-icon">💻</div>
-            <div class="story-text">
+          <div class="timeline-item reveal fade-in-left" data-delay="0.2">
+            <div class="timeline-icon">💻</div>
+            <div class="timeline-content">
               <h3>Develop &amp; Build</h3>
-              <p>
-                Using modern technologies, our engineers bring designs to life with clean,
-                performant code and scalable architectures built for the future.
-              </p>
+              <p>We code responsive, performant websites and apps using the latest technologies.</p>
             </div>
           </div>
-          <div class="story-panel reveal fade-in-right">
-            <div class="story-icon">🚀</div>
-            <div class="story-text">
-              <h3>Deliver &amp; Grow</h3>
-              <p>
-                After launch, we stay by your side to optimise, evolve and ensure your
-                digital presence continues to grow and delight your audience.
-              </p>
+          <div class="timeline-item reveal fade-in-right" data-delay="0.3">
+            <div class="timeline-icon">🚀</div>
+            <div class="timeline-content">
+              <h3>Launch &amp; Grow</h3>
+              <p>After launching your product, we optimize, analyse and help you scale.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
-
-    <!-- Bento Layout Section -->
-    <section class="bento">
+    <!-- Mosaic Section -->
+    <section class="mosaic">
       <div class="container">
-        <h2 class="section-title reveal fade-in-up">What We Do Best</h2>
-        <div class="bento-grid">
-          <div class="bento-tile large reveal fade-in-up">
-            <div class="icon">🖥️</div>
-            <h3>Responsive Web</h3>
-            <p>
-              Crafting responsive websites that adapt beautifully to any screen size, ensuring a
-              seamless experience on desktop, tablet and mobile devices.
-            </p>
-          </div>
-          <div class="bento-tile reveal fade-in-up" data-delay="0.1">
-            <div class="icon">📊</div>
-            <h3>SEO &amp; Analytics</h3>
-            <p>
-              Leveraging data to optimise your visibility, drive organic traffic and measure success
-              with actionable insights.
-            </p>
-          </div>
-          <div class="bento-tile reveal fade-in-up" data-delay="0.2">
-            <div class="icon">🎨</div>
-            <h3>UI/UX Design</h3>
-            <p>
-              Blending art and science to create intuitive user interfaces that engage and delight.
-            </p>
-          </div>
-          <div class="bento-tile reveal fade-in-up" data-delay="0.3">
-            <div class="icon">🛒</div>
-            <h3>E‑commerce</h3>
-            <p>
-              Building secure, scalable online stores with smooth checkout flows and custom integrations.
-            </p>
-          </div>
-          <div class="bento-tile reveal fade-in-up" data-delay="0.4">
-            <div class="icon">🔒</div>
-            <h3>Performance &amp; Security</h3>
-            <p>
-              Prioritising speed, accessibility and best‑in‑class security to protect your data and reputation.
-            </p>
-          </div>
-          <div class="bento-tile reveal fade-in-up" data-delay="0.5">
-            <div class="icon">🌱</div>
-            <h3>Support &amp; Growth</h3>
-            <p>
-              Providing ongoing support, maintenance and strategic guidance to help your business thrive.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Puzzle Section -->
-    <section class="puzzle">
-      <div class="container">
-        <h2 class="section-title reveal fade-in-up">Assemble Your Digital Puzzle</h2>
-        <p class="puzzle-intro reveal fade-in-up">Each piece of your digital identity fits together to create a cohesive whole. Watch as the pieces snap into place.</p>
-        <div class="puzzle-grid">
-          <div class="puzzle-piece reveal" style="--tx: -120%; --ty: -50%;">
-            <div class="emoji">🧩</div>
-            <h4>Branding</h4>
-            <p>Distinctive visuals and messaging define your identity.</p>
-          </div>
-          <div class="puzzle-piece reveal" style="--tx: 50%; --ty: -80%;">
-            <div class="emoji">💡</div>
-            <h4>Ideation</h4>
-            <p>We brainstorm, iterate and refine to capture your vision.</p>
-          </div>
-          <div class="puzzle-piece reveal" style="--tx: 120%; --ty: -20%;">
-            <div class="emoji">🎯</div>
+        <h2 class="section-title reveal fade-in-up">Digital Mosaic</h2>
+        <p class="reveal fade-in-up" data-delay="0.1">
+          Pieces of our expertise come together to form a beautiful digital masterpiece.
+        </p>
+        <div class="mosaic-grid">
+          <!-- Each piece has custom offsets defined via inline style properties. -->
+          <div class="mosaic-piece" style="--tx:-80px; --ty:-80px;">
+            <div class="mosaic-icon">🎯</div>
             <h4>Strategy</h4>
-            <p>Clear goals and smart planning underpin every project.</p>
           </div>
-          <div class="puzzle-piece reveal" style="--tx: -100%; --ty: 80%;">
-            <div class="emoji">🛠️</div>
-            <h4>Build</h4>
-            <p>Our developers craft seamless, responsive experiences.</p>
+          <div class="mosaic-piece" style="--tx:80px; --ty:-60px;">
+            <div class="mosaic-icon">🎨</div>
+            <h4>Branding</h4>
           </div>
-          <div class="puzzle-piece reveal" style="--tx: 0%; --ty: 100%;">
-            <div class="emoji">🚀</div>
-            <h4>Launch</h4>
-            <p>We deliver polished products and help you go live with confidence.</p>
+          <div class="mosaic-piece" style="--tx:-60px; --ty:90px;">
+            <div class="mosaic-icon">🔧</div>
+            <h4>Development</h4>
           </div>
-          <div class="puzzle-piece reveal" style="--tx: 100%; --ty: 60%;">
-            <div class="emoji">📈</div>
-            <h4>Grow</h4>
-            <p>Ongoing optimisation and support help your business thrive.</p>
+          <div class="mosaic-piece" style="--tx:70px; --ty:100px;">
+            <div class="mosaic-icon">📈</div>
+            <h4>Analytics</h4>
           </div>
-          <div class="puzzle-piece reveal" style="--tx: -60%; --ty: 200%;">
-            <div class="emoji">🔗</div>
-            <h4>Connect</h4>
-            <p>Integration with tools and platforms extends your reach.</p>
+          <div class="mosaic-piece" style="--tx:-100px; --ty:60px;">
+            <div class="mosaic-icon">💡</div>
+            <h4>Innovation</h4>
           </div>
-          <div class="puzzle-piece reveal" style="--tx: 30%; --ty: 220%;">
-            <div class="emoji">📊</div>
-            <h4>Insights</h4>
-            <p>Analytics and reporting provide actionable intelligence.</p>
-          </div>
-          <div class="puzzle-piece reveal" style="--tx: 150%; --ty: 180%;">
-            <div class="emoji">🌐</div>
-            <h4>Global</h4>
-            <p>We help you scale and resonate with audiences worldwide.</p>
+          <div class="mosaic-piece" style="--tx:110px; --ty:-90px;">
+            <div class="mosaic-icon">🤝</div>
+            <h4>Support</h4>
           </div>
         </div>
       </div>
     </section>
-
-    <!-- Services Section -->
-    <section class="services" id="services">
+    <!-- Packages Section -->
+    <section class="packages" id="packages">
       <div class="container">
         <h2 class="section-title reveal fade-in-up">Packages &amp; Services</h2>
-        <div class="services-grid">
+        <div class="packages-grid">
           <!-- Basic Web Package -->
-          <div class="service-card reveal fade-in-left">
-            <i class="fas fa-laptop-code"></i>
-            <h3>🧑‍💻 Basic Web Package</h3>
-            <p>
-              Perfect for startups and sole traders looking for a
-              professional online presence. Includes 1–3 pages, responsive
-              design and a contact form. Pricing starts around $1,000–3,000
-              AUD.
-            </p>
-            <a href="services/index.html#basic" class="service-link">Learn more</a>
+          <div class="package-card reveal fade-in-left">
+            <i class="fa-solid fa-laptop-code"></i>
+            <h3>Basic Web Package</h3>
+            <p>Perfect for startups and sole traders seeking a polished online presence.</p>
+            <ul>
+              <li><i class="fa-solid fa-check-circle"></i> Custom template with your branding</li>
+              <li><i class="fa-solid fa-check-circle"></i> 1–3 responsive pages</li>
+              <li><i class="fa-solid fa-check-circle"></i> Contact form &amp; analytics</li>
+              <li><i class="fa-solid fa-check-circle"></i> Starter SEO setup</li>
+            </ul>
+            <p class="price">From $1,000–3,000 AUD</p>
           </div>
           <!-- Standard Web + SEO Package -->
-          <div class="service-card reveal fade-in-up">
-            <i class="fas fa-layer-group"></i>
-            <h3>🛠️ Standard Web + SEO Package</h3>
-            <p>
-              Designed for growing small businesses. Includes a custom
-              website with up to 5–10 pages, blog setup, contact forms and
-              foundational SEO. Website design ranges from $3,000–8,000 AUD. with optional SEO retainers starting from $1,200 per month.
-            </p>
-            <a href="services/index.html#standard" class="service-link">Learn more</a>
+          <div class="package-card reveal fade-in-up" data-delay="0.1">
+            <i class="fa-solid fa-layer-group"></i>
+            <h3>Standard Web + SEO</h3>
+            <p>Designed for growing businesses demanding both design and optimisation.</p>
+            <ul>
+              <li><i class="fa-solid fa-check-circle"></i> Custom design up to 10 pages</li>
+              <li><i class="fa-solid fa-check-circle"></i> Blog &amp; CMS integration</li>
+              <li><i class="fa-solid fa-check-circle"></i> Advanced forms &amp; booking tools</li>
+              <li><i class="fa-solid fa-check-circle"></i> On‑page SEO &amp; keyword research</li>
+            </ul>
+            <p class="price">From $3,000–8,000 AUD<br /><small>SEO retainer from $1,200/month</small></p>
           </div>
           <!-- SEO Booster Plan -->
-          <div class="service-card reveal fade-in-right">
-            <i class="fas fa-chart-line"></i>
-            <h3>🚀 SEO Booster Plan</h3>
-            <p>
-              An ongoing optimisation service that enhances your search
-              rankings. Includes on-page optimisation, keyword research, link
-              building and monthly reports. Suitable for local businesses
-              looking to grow. Plans start at $1,200–2,500 AUD per month for
-              small businesses.
-            </p>
-            <a href="services/index.html#seo" class="service-link">Learn more</a>
+          <div class="package-card reveal fade-in-right" data-delay="0.2">
+            <i class="fa-solid fa-chart-line"></i>
+            <h3>SEO Booster Plan</h3>
+            <p>Ongoing optimisation to improve visibility and drive organic traffic.</p>
+            <ul>
+              <li><i class="fa-solid fa-check-circle"></i> Monthly keyword &amp; content strategy</li>
+              <li><i class="fa-solid fa-check-circle"></i> Technical &amp; on‑page optimisation</li>
+              <li><i class="fa-solid fa-check-circle"></i> Quality link building</li>
+              <li><i class="fa-solid fa-check-circle"></i> Detailed performance reports</li>
+            </ul>
+            <p class="price">From $1,200–2,500 AUD / month</p>
           </div>
         </div>
       </div>
     </section>
-    <!-- The Why Us and Process sections have been moved to their own page -->
     <!-- Call to Action -->
     <section class="cta">
       <div class="container cta-content reveal scale-in">
-        <h2>Ready to start your project?</h2>
-        <p>
-          Let’s bring your vision to life. Contact us today for a free
-          consultation.
-        </p>
+        <h2>Ready to bring your vision to life?</h2>
+        <p>Partner with Dvitix and turn your ideas into vibrant digital experiences.</p>
         <a href="contact/index.html" class="btn btn-primary">Contact Us</a>
       </div>
     </section>
@@ -402,18 +193,18 @@
           <h3>Dvitix</h3>
           <p>
             We are a multidisciplinary team of designers, developers and
-            strategists dedicated to creating digital experiences that inspire.
+            strategists dedicated to crafting digital experiences that inspire and
+            drive results.
           </p>
         </div>
         <div class="footer-links">
           <h4>Links</h4>
           <ul>
-            <!-- Use cleaner URLs by linking to directories instead of .html files. -->
-            <li><a href="/">Home</a></li>
-            <li><a href="services/index.html">Services</a></li>
-            <li><a href="why-us/index.html">Why&nbsp;Us</a></li>
-            <li><a href="about/index.html">About</a></li>
-            <li><a href="contact/index.html">Contact</a></li>
+            <li><a href="index.html" data-page="home">Home</a></li>
+            <li><a href="services/index.html" data-page="services">Services</a></li>
+            <li><a href="why-us/index.html" data-page="whyus">Why Us</a></li>
+            <li><a href="about/index.html" data-page="about">About</a></li>
+            <li><a href="contact/index.html" data-page="contact">Contact</a></li>
           </ul>
         </div>
         <div class="footer-social">
