@@ -176,3 +176,27 @@ if (document.readyState !== 'loading') {
   }
   setInterval(next, 5000);
 })();
+
+// Animate the puzzle pieces into place when the puzzle grid enters the viewport.
+// Each piece uses CSS custom properties --tx and --ty to define its starting
+// offset. When 'assembled' is added, the pieces translate to (0,0) and fade in.
+(() => {
+  const puzzleGrid = document.querySelector('.puzzle-grid');
+  if (!puzzleGrid) return;
+  const pieces = puzzleGrid.querySelectorAll('.puzzle-piece');
+  const puzzleObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        pieces.forEach((piece, index) => {
+          setTimeout(() => {
+            piece.classList.add('assembled');
+          }, index * 200);
+        });
+        puzzleObserver.unobserve(puzzleGrid);
+      }
+    });
+  }, {
+    threshold: 0.2,
+  });
+  puzzleObserver.observe(puzzleGrid);
+})();

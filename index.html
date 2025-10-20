@@ -13,8 +13,9 @@
       crossorigin
     />
     <!-- Use Manrope for a softer, rounded aesthetic and improved clarity -->
+    <!-- Use Inter for modern, legible typography -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <!-- Font Awesome -->
@@ -179,51 +180,165 @@
         </div>
       </div>
     </section>
+    <!-- Story section removed: this narrative now appears on the About page -->
     <!-- Storytelling Section -->
-    <section class="story">
+    <section class="story-scroll">
       <div class="container">
-        <h2 class="section-title reveal fade-in-up">Our Story</h2>
-        <div class="story-grid">
-          <div class="story-item reveal fade-in-left">
-            <div class="story-img">
-              <img src="images/portfolio1.png" alt="Crafted with passion" />
-            </div>
-            <div class="story-content">
-              <h3>Crafted with Passion</h3>
+        <h2 class="section-title reveal fade-in-up">Our Journey to Success</h2>
+        <div class="story-wrapper">
+          <div class="story-panel reveal fade-in-left">
+            <div class="story-icon">🌌</div>
+            <div class="story-text">
+              <h3>Dream &amp; Discover</h3>
               <p>
-                Each project begins with discovery and inspiration. We immerse
-                ourselves in your brand to craft unique experiences that resonate
-                deeply with your audience.
+                Every great product starts with a bold idea. We collaborate to uncover
+                your vision, explore possibilities and set the foundation for an unforgettable
+                digital experience.
               </p>
             </div>
           </div>
-          <div class="story-item reveal fade-in-right">
-            <div class="story-img">
-              <img src="images/portfolio2.png" alt="Engineered for performance" />
-            </div>
-            <div class="story-content">
-              <h3>Engineered for Performance</h3>
+          <div class="story-panel reveal fade-in-right">
+            <div class="story-icon">🎨</div>
+            <div class="story-text">
+              <h3>Design &amp; Refine</h3>
               <p>
-                Our developers build robust, scalable solutions using modern
-                technologies, ensuring speed and reliability across devices.
+                Our designers sketch, iterate and craft bespoke interfaces that balance
+                aesthetics with usability. We refine until every detail aligns with your brand.
               </p>
             </div>
           </div>
-          <div class="story-item reveal fade-in-left">
-            <div class="story-img">
-              <img src="images/portfolio3.png" alt="Tailored for you" />
-            </div>
-            <div class="story-content">
-              <h3>Tailored Just for You</h3>
+          <div class="story-panel reveal fade-in-left">
+            <div class="story-icon">💻</div>
+            <div class="story-text">
+              <h3>Develop &amp; Build</h3>
               <p>
-                We believe in personalisation. By aligning design and strategy to
-                your goals, we create digital experiences that feel truly yours.
+                Using modern technologies, our engineers bring designs to life with clean,
+                performant code and scalable architectures built for the future.
+              </p>
+            </div>
+          </div>
+          <div class="story-panel reveal fade-in-right">
+            <div class="story-icon">🚀</div>
+            <div class="story-text">
+              <h3>Deliver &amp; Grow</h3>
+              <p>
+                After launch, we stay by your side to optimise, evolve and ensure your
+                digital presence continues to grow and delight your audience.
               </p>
             </div>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- Bento Layout Section -->
+    <section class="bento">
+      <div class="container">
+        <h2 class="section-title reveal fade-in-up">What We Do Best</h2>
+        <div class="bento-grid">
+          <div class="bento-tile large reveal fade-in-up">
+            <div class="icon">🖥️</div>
+            <h3>Responsive Web</h3>
+            <p>
+              Crafting responsive websites that adapt beautifully to any screen size, ensuring a
+              seamless experience on desktop, tablet and mobile devices.
+            </p>
+          </div>
+          <div class="bento-tile reveal fade-in-up" data-delay="0.1">
+            <div class="icon">📊</div>
+            <h3>SEO &amp; Analytics</h3>
+            <p>
+              Leveraging data to optimise your visibility, drive organic traffic and measure success
+              with actionable insights.
+            </p>
+          </div>
+          <div class="bento-tile reveal fade-in-up" data-delay="0.2">
+            <div class="icon">🎨</div>
+            <h3>UI/UX Design</h3>
+            <p>
+              Blending art and science to create intuitive user interfaces that engage and delight.
+            </p>
+          </div>
+          <div class="bento-tile reveal fade-in-up" data-delay="0.3">
+            <div class="icon">🛒</div>
+            <h3>E‑commerce</h3>
+            <p>
+              Building secure, scalable online stores with smooth checkout flows and custom integrations.
+            </p>
+          </div>
+          <div class="bento-tile reveal fade-in-up" data-delay="0.4">
+            <div class="icon">🔒</div>
+            <h3>Performance &amp; Security</h3>
+            <p>
+              Prioritising speed, accessibility and best‑in‑class security to protect your data and reputation.
+            </p>
+          </div>
+          <div class="bento-tile reveal fade-in-up" data-delay="0.5">
+            <div class="icon">🌱</div>
+            <h3>Support &amp; Growth</h3>
+            <p>
+              Providing ongoing support, maintenance and strategic guidance to help your business thrive.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Puzzle Section -->
+    <section class="puzzle">
+      <div class="container">
+        <h2 class="section-title reveal fade-in-up">Assemble Your Digital Puzzle</h2>
+        <p class="puzzle-intro reveal fade-in-up">Each piece of your digital identity fits together to create a cohesive whole. Watch as the pieces snap into place.</p>
+        <div class="puzzle-grid">
+          <div class="puzzle-piece reveal" style="--tx: -120%; --ty: -50%;">
+            <div class="emoji">🧩</div>
+            <h4>Branding</h4>
+            <p>Distinctive visuals and messaging define your identity.</p>
+          </div>
+          <div class="puzzle-piece reveal" style="--tx: 50%; --ty: -80%;">
+            <div class="emoji">💡</div>
+            <h4>Ideation</h4>
+            <p>We brainstorm, iterate and refine to capture your vision.</p>
+          </div>
+          <div class="puzzle-piece reveal" style="--tx: 120%; --ty: -20%;">
+            <div class="emoji">🎯</div>
+            <h4>Strategy</h4>
+            <p>Clear goals and smart planning underpin every project.</p>
+          </div>
+          <div class="puzzle-piece reveal" style="--tx: -100%; --ty: 80%;">
+            <div class="emoji">🛠️</div>
+            <h4>Build</h4>
+            <p>Our developers craft seamless, responsive experiences.</p>
+          </div>
+          <div class="puzzle-piece reveal" style="--tx: 0%; --ty: 100%;">
+            <div class="emoji">🚀</div>
+            <h4>Launch</h4>
+            <p>We deliver polished products and help you go live with confidence.</p>
+          </div>
+          <div class="puzzle-piece reveal" style="--tx: 100%; --ty: 60%;">
+            <div class="emoji">📈</div>
+            <h4>Grow</h4>
+            <p>Ongoing optimisation and support help your business thrive.</p>
+          </div>
+          <div class="puzzle-piece reveal" style="--tx: -60%; --ty: 200%;">
+            <div class="emoji">🔗</div>
+            <h4>Connect</h4>
+            <p>Integration with tools and platforms extends your reach.</p>
+          </div>
+          <div class="puzzle-piece reveal" style="--tx: 30%; --ty: 220%;">
+            <div class="emoji">📊</div>
+            <h4>Insights</h4>
+            <p>Analytics and reporting provide actionable intelligence.</p>
+          </div>
+          <div class="puzzle-piece reveal" style="--tx: 150%; --ty: 180%;">
+            <div class="emoji">🌐</div>
+            <h4>Global</h4>
+            <p>We help you scale and resonate with audiences worldwide.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Services Section -->
     <section class="services" id="services">
       <div class="container">
