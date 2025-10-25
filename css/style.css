@@ -305,39 +305,174 @@ a {
 
 /* Footer */
 .footer {
-  background-color: var(--neutral-dark);
+  background-image: linear-gradient(180deg, var(--neutral-dark) 0%, #070a1d 100%);
   color: var(--neutral-light);
+  padding: 0; /* padding handled by CTA and grid sections */
+}
+
+/*
+  Layout for the main footer grid. We increase the minimum column width so
+  that the grid comfortably fits four distinct sections (About, Links,
+  Contact and Social) on larger screens. On narrow screens the grid
+  collapses gracefully thanks to auto-fit and minmax.
+*/
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 32px;
   padding: 60px 20px;
 }
 
-.footer-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
-}
-
 .footer h3,
-.footer h4 {
+  .footer h4 {
   margin-bottom: 12px;
   color: var(--accent);
+  font-weight: 600;
 }
 
-.footer a {
+/* Link styling defined in the .footer-links section below */
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+  padding: 20px;
+}
+
+/* ------------------------------------------------------------------ */
+/* Enhanced footer components                                       */
+/* ------------------------------------------------------------------ */
+
+/* Call-to-action strip above the footer grid */
+.footer-cta {
+  text-align: center;
+  padding: 60px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.footer-cta-title {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  font-family: 'Orbitron', sans-serif;
   color: var(--neutral-light);
-  display: block;
-  margin-bottom: 8px;
-  transition: color 0.2s ease;
+}
+.footer-cta .btn {
+  margin-top: 10px;
 }
 
-.footer a:hover {
+/* Footer links list styling */
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer-links li {
+  margin-bottom: 8px;
+}
+.footer-links li a {
+  color: var(--neutral-light);
+  display: inline-block;
+  transition: color 0.2s ease;
+  position: relative;
+  padding-left: 18px;
+}
+.footer-links li a::before {
+  /* Use a simple coloured dot instead of an external icon */
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  background-color: var(--accent);
+  border-radius: 50%;
+}
+.footer-links li a:hover {
   color: var(--accent2);
 }
 
-.footer-bottom {
-  text-align: center;
-  margin-top: 30px;
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.7);
+/* Contact details list styling */
+.footer-contact ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer-contact li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  color: var(--neutral-light);
+  font-size: 0.95rem;
+}
+.footer-contact li i {
+  margin-right: 8px;
+  color: var(--accent2);
+  font-size: 1.1rem;
+}
+.footer-contact li a {
+  color: var(--neutral-light);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.footer-contact li a:hover {
+  color: var(--accent2);
+}
+
+/* Inline SVG icons for contact and social sections */
+.footer-contact img,
+.footer-social .social-icons img {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  /* Invert colours so black SVGs appear light on the dark footer */
+  filter: invert(1);
+}
+
+/* Social icons adjustments */
+.social-icons a {
+  /*
+    Display social icons inside circular containers to make them stand
+    out on the dark background. We use inline-flex so that the icons
+    remain centered both horizontally and vertically, and apply a subtle
+    border and glow on hover for a futuristic feel.
+  */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin-right: 12px;
+  color: var(--neutral-light);
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--accent);
+  border-radius: 50%;
+  font-size: 1.4rem;
+  transition: all 0.3s ease;
+}
+.social-icons a:last-child {
+  margin-right: 0;
+}
+/* Glow and colour shift on hover */
+.social-icons a:hover {
+  color: var(--accent);
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 8px var(--accent2);
+  transform: translateY(-3px);
+}
+
+/* Ensure the Font Awesome icons inside social links inherit the correct colour */
+.footer-social .social-icons a i {
+  color: inherit;
+  /* Slightly reduce the font size relative to the container for a balanced look */
+  font-size: 1.1rem;
+}
+
+/* Ensure social icons align horizontally with spacing */
+.footer-social .social-icons {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
 }
 
 /* Contact page styles */
