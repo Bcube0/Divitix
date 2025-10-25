@@ -1,21 +1,43 @@
 /*
   Custom stylesheet for Dvitix Digital Studio
 
-  This file defines a modern, clean theme that uses a balanced colour palette
-  that's not too dark and not too bright. Layout containers have borders and
-  generous spacing to avoid a cramped look. All pages (home, services and
-  contact) share these styles to provide a cohesive experience.
+  This version embraces a fun, futuristic vibe inspired by neon colours and
+  cosmic gradients. Dark backgrounds and luminous accents create contrast
+  while generous spacing keeps content breathable. Subtle animations and
+  hover effects add interactivity without sacrificing performance.
 */
 
 * {
   box-sizing: border-box;
 }
 
+/* Colour palette variables for the futuristic theme */
+:root {
+  --primary: #0f052c;      /* deep cosmic purple used as page background */
+  --secondary: #3c0fa0;    /* secondary purple for gradients */
+  --accent: #00e6fe;       /* neon cyan accent */
+  --accent2: #ff6ec7;      /* neon pink accent */
+  --neutral-dark: #12182d; /* dark surface for cards */
+  --neutral-light: #f5f5f5;/* light text colour */
+}
+
 body {
   font-family: 'Inter', sans-serif;
   margin: 0;
-  background-color: #f5f7fa; /* soft light background */
-  color: #333; /* dark grey text for good contrast */
+  background-color: var(--primary);
+  color: var(--neutral-light);
+  line-height: 1.6;
+}
+
+/*
+  Use a futuristic display font for large headings. By isolating the typeface to
+  titles only we maintain legibility in body copy while adding a distinctive
+  sci‑fi vibe where it counts.
+*/
+.hero-title,
+.section-title {
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: 1px;
 }
 
 a {
@@ -25,8 +47,8 @@ a {
 
 /* Header and navigation */
 .header {
-  background-color: #ffffff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: var(--neutral-dark);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -42,9 +64,9 @@ a {
 }
 
 .logo a {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: 700;
-  color: #4e96d9; /* brand accent colour */
+  color: var(--accent);
 }
 
 .nav-list {
@@ -58,14 +80,15 @@ a {
 .nav-list a {
   padding: 8px 12px;
   border-radius: 4px;
-  color: #333;
+  color: var(--neutral-light);
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
+/* Highlight current/hovered navigation links with a translucent accent background */
 .nav-list a:hover,
 .nav-list a.active {
-  background-color: #e0ecfb; /* light blue hover background */
-  color: #205295; /* darker accent on hover/active */
+  background-color: rgba(0, 230, 254, 0.2);
+  color: var(--accent);
 }
 
 /* Generic containers and sections */
@@ -77,15 +100,52 @@ a {
 
 .section-title {
   text-align: center;
-  font-size: 2rem;
-  margin-bottom: 40px;
+  font-size: 2.2rem;
+  margin-bottom: 50px;
+  color: var(--neutral-light);
+  font-weight: 600;
 }
 
 .hero {
-  background-image: linear-gradient(135deg, #eef2f3 0%, #d6e3f3 100%);
-  color: #333;
-  padding: 100px 20px;
+  position: relative;
+  background-image: linear-gradient(140deg, var(--secondary) 0%, var(--primary) 100%);
+  color: var(--neutral-light);
+  padding: 140px 20px;
   text-align: center;
+  overflow: hidden;
+}
+
+/* Starfield overlay for hero section */
+.hero::before,
+.hero::after {
+  content: '';
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  width: 300%;
+  height: 300%;
+  background-image:
+    radial-gradient(1px 1px at 20% 30%, rgba(255, 255, 255, 0.6) 50%, transparent 50%),
+    radial-gradient(1px 1px at 70% 80%, rgba(255, 255, 255, 0.4) 50%, transparent 50%),
+    radial-gradient(1px 1px at 50% 50%, rgba(255, 255, 255, 0.5) 50%, transparent 50%),
+    radial-gradient(1px 1px at 90% 20%, rgba(255, 255, 255, 0.5) 50%, transparent 50%);
+  animation: hero-stars 80s linear infinite;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.hero::after {
+  animation-duration: 120s;
+  opacity: 0.4;
+}
+
+@keyframes hero-stars {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(50%, 50%);
+  }
 }
 
 .hero .container {
@@ -93,14 +153,18 @@ a {
   margin: 0 auto;
 }
 
+/* Larger, bold hero title */
 .hero-title {
-  font-size: 2.5rem;
+  font-size: 3rem;
+  font-weight: 700;
   margin-bottom: 20px;
 }
 
+/* Slightly larger subtitle with reduced opacity */
 .hero-subtitle {
-  font-size: 1.2rem;
-  margin-bottom: 30px;
+  font-size: 1.3rem;
+  margin-bottom: 40px;
+  opacity: 0.9;
 }
 
 .btn {
@@ -111,13 +175,17 @@ a {
   transition: background-color 0.2s ease;
 }
 
+/* Gradient buttons with neon accent */
 .btn-primary {
-  background-color: #4e96d9;
-  color: #fff;
+  background-image: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
+  color: var(--primary);
+  border: none;
+  font-weight: 600;
 }
 
 .btn-primary:hover {
-  background-color: #407bb5;
+  background-image: linear-gradient(135deg, var(--accent2) 0%, var(--accent) 100%);
+  color: var(--primary);
 }
 
 /* Grid layouts */
@@ -137,21 +205,45 @@ a {
 .package-card,
 .project-item,
 .services-section .service-card {
-  background-color: #fff;
-  border: 1px solid #e4e7ec;
-  border-radius: 8px;
-  padding: 20px;
+  background-color: var(--neutral-dark);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 30px;
   text-align: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0 10px rgba(0, 230, 254, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Improve readability inside services cards by ensuring the text remains light
+   and the headings pop with an accent colour */
+.services-section .service-card {
+  color: var(--neutral-light);
+}
+
+.services-section .service-card h3 {
+  color: var(--accent);
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.feature-card:hover,
+.step-card:hover,
+.package-card:hover,
+.project-item:hover,
+.services-section .service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 15px rgba(255, 110, 199, 0.35);
+}
+
+/* Icons use neon accent colours */
 .feature-icon,
 .step-icon,
 .services-section .service-card i {
-  font-size: 2rem;
+  font-size: 2.2rem;
   margin-bottom: 10px;
-  color: #4e96d9;
+  color: var(--accent2);
 }
+
 
 /* Project cards */
 .project-item img {
@@ -163,13 +255,15 @@ a {
 
 .project-overlay {
   padding: 15px;
+  color: var(--neutral-light);
 }
 
 /* Package cards */
+/* Icon styling inside package cards */
 .package-card i {
-  font-size: 2rem;
+  font-size: 2.2rem;
   margin-bottom: 10px;
-  color: #4e96d9;
+  color: var(--accent);
 }
 
 .package-card ul {
@@ -188,29 +282,32 @@ a {
 .price {
   font-weight: 600;
   margin-top: 10px;
+  color: var(--accent2);
 }
 
-/* CTA section */
+/* CTA section with gradient background */
 .cta {
-  background-color: #4e96d9;
-  color: #fff;
+  background-image: linear-gradient(135deg, var(--secondary) 0%, var(--accent2) 100%);
+  color: var(--neutral-light);
   text-align: center;
-  padding: 60px 20px;
+  padding: 80px 20px;
 }
 
 .cta-content h2 {
-  margin-bottom: 10px;
+  margin-bottom: 12px;
+  font-size: 2rem;
 }
 
 .cta-content p {
-  margin-bottom: 20px;
+  margin-bottom: 24px;
+  font-size: 1.1rem;
 }
 
 /* Footer */
 .footer {
-  background-color: #f2f6fa;
-  color: #333;
-  padding: 40px 20px;
+  background-color: var(--neutral-dark);
+  color: var(--neutral-light);
+  padding: 60px 20px;
 }
 
 .footer-grid {
@@ -221,68 +318,78 @@ a {
 
 .footer h3,
 .footer h4 {
-  margin-bottom: 10px;
-  color: #205295;
+  margin-bottom: 12px;
+  color: var(--accent);
 }
 
 .footer a {
-  color: #333;
+  color: var(--neutral-light);
   display: block;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
+  transition: color 0.2s ease;
 }
 
 .footer a:hover {
-  color: #4e96d9;
+  color: var(--accent2);
 }
 
 .footer-bottom {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 30px;
   font-size: 0.9rem;
-  color: #555;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 /* Contact page styles */
 .contact-section .contact-form {
-  background-color: #fff;
-  border: 1px solid #e4e7ec;
-  border-radius: 8px;
-  padding: 20px;
+  background-color: var(--neutral-dark);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 30px;
   max-width: 600px;
   margin: 0 auto;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0 10px rgba(0, 230, 254, 0.1);
 }
 
 .contact-form input,
 .contact-form textarea {
   width: 100%;
-  padding: 12px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  padding: 14px;
+  margin-bottom: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
   font-family: inherit;
   font-size: 1rem;
+  background-color: var(--primary);
+  color: var(--neutral-light);
 }
 
 .contact-form textarea {
-  min-height: 120px;
+  min-height: 140px;
   resize: vertical;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--accent2);
+  box-shadow: 0 0 6px rgba(255, 110, 199, 0.5);
 }
 
 .contact-form button {
   width: 100%;
-  padding: 12px;
-  background-color: #4e96d9;
-  color: #fff;
+  padding: 14px;
+  background-image: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
+  color: var(--primary);
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
   font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: opacity 0.2s ease;
 }
 
 .contact-form button:hover {
-  background-color: #407bb5;
+  opacity: 0.9;
 }
 
 .contact-info {
@@ -294,29 +401,67 @@ a {
 }
 
 .contact-info .info-item {
-  background-color: #fff;
-  border: 1px solid #e4e7ec;
-  border-radius: 8px;
+  background-color: var(--neutral-dark);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
   padding: 20px;
   text-align: center;
   width: 250px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0 10px rgba(0, 230, 254, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-info .info-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 15px rgba(255, 110, 199, 0.35);
+}
+
+/*
+  Reveal animations
+
+  Elements with the `reveal` class will be invisible and offset until they
+  enter the viewport. When the `visible` class is added via JavaScript,
+  they fade and slide into place. Variants such as `fade-in-left` and
+  `fade-in-right` override the initial transform direction. A `scale-in`
+  variant starts slightly smaller and grows to full size on reveal.
+*/
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.fade-in-left {
+  transform: translateX(-40px);
+}
+
+.reveal.fade-in-right {
+  transform: translateX(40px);
+}
+
+.reveal.scale-in {
+  transform: scale(0.9);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translate(0, 0) scale(1);
 }
 
 .info-item i {
   font-size: 1.8rem;
-  color: #4e96d9;
+  color: var(--accent);
   margin-bottom: 10px;
 }
 
 .info-item h4 {
   margin-bottom: 5px;
-  color: #205295;
+  color: var(--accent2);
 }
 
 .info-item p {
   margin: 0;
-  color: #333;
+  color: var(--neutral-light);
 }
 
 /* About page specific styles */
