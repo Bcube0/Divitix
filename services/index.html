@@ -2,20 +2,16 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dvitix Packages – Web Design &amp; SEO</title>
+    <title>Our Services – Dvitix</title>
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link
-      rel="preconnect"
-      href="https://fonts.gstatic.com"
-      crossorigin
-    />
-    <!-- Use Inter for sharper, clearer typography -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <!-- Font Awesome icons -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
@@ -23,143 +19,135 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <!-- Custom stylesheet -->
     <link rel="stylesheet" href="../css/style.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   </head>
   <body>
     <!-- Header -->
     <header class="header">
-      <div class="container nav-container">
-        <div class="logo">
-          <!-- Link back to the home page using a relative path so that the
-               website functions correctly when viewed from the file system. -->
-          <a href="../index.html">Dvitix</a>
-        </div>
-        <nav class="nav" id="nav-menu">
+      <div class="nav-container">
+        <div class="logo"><a href="../index.html">Dvitix</a></div>
+        <nav>
           <ul class="nav-list">
-            <li><a href="../index.html" class="nav-link" data-page="home">Home</a></li>
-            <li><a href="index.html" class="nav-link active" data-page="services">Services</a></li>
-            <li><a href="../why-us/index.html" class="nav-link" data-page="whyus">Why&nbsp;Us</a></li>
-            <li><a href="../about/index.html" class="nav-link" data-page="about">About</a></li>
-            <li><a href="../contact/index.html" class="nav-link" data-page="contact">Contact</a></li>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="index.html" class="active">Services</a></li>
+            <li><a href="../why-us/index.html">Why&nbsp;Us</a></li>
+            <li><a href="../about/index.html">About</a></li>
+            <li><a href="../contact/index.html">Contact</a></li>
           </ul>
         </nav>
-        <div class="hamburger" id="hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
       </div>
     </header>
-    <!-- Page Hero -->
-    <section class="page-hero parallax-hero">
+
+    <!-- Hero Section -->
+    <section class="hero">
       <div class="container">
-        <h1>Our Packages</h1>
-        <p>Flexible web design and SEO plans tailored for startups and small businesses.</p>
+        <h1 class="hero-title">Our Services</h1>
+        <p class="hero-subtitle">Discover how we can help elevate your brand with our tailored digital solutions.</p>
       </div>
     </section>
-    <!-- Package Details -->
-    <!-- Basic Web Package -->
-    <section class="service-detail" id="basic">
-      <div class="container detail-grid">
-        <div class="detail-icon reveal fade-in-up">
-          <i class="fas fa-laptop-code"></i>
-        </div>
-        <div class="detail-content reveal fade-in-up" data-delay="0.2">
-          <h2>🧑‍💻 Basic Web Package</h2>
-          <p>
-            An affordable entry-level package ideal for sole traders and startups. We
-            design and build a simple yet professional website that reflects
-            your brand and showcases your offerings. According to 2025 guides,
-            basic websites with 1–3 pages typically cost between $1,000
-            and $3,000&nbsp;AUD.
-          </p>
-          <ul>
-            <li><i class="fas fa-check-circle"></i> Template-based design customised with your branding</li>
-            <li><i class="fas fa-check-circle"></i> Responsive layout compatible with mobile and desktop</li>
-            <li><i class="fas fa-check-circle"></i> Home, About and Contact pages</li>
-            <li><i class="fas fa-check-circle"></i> Contact form with spam protection</li>
-            <li><i class="fas fa-check-circle"></i> Search-engine-friendly setup</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <!-- Standard Web + SEO Package -->
-    <section class="service-detail" id="standard">
-      <div class="container detail-grid">
-        <div class="detail-icon reveal fade-in-up">
-          <i class="fas fa-layer-group"></i>
-        </div>
-        <div class="detail-content reveal fade-in-up" data-delay="0.2">
-          <h2>🛠️ Standard Web + SEO Package</h2>
-          <p>
-            Crafted for growing small businesses, this package delivers a
-            bespoke website coupled with foundational SEO. Custom sites with
-            5–10 pages usually range from $3,000 to $8,000&nbsp;AUD. To
-            build authority online, we include an initial on-page SEO setup and
-            offer ongoing optimisation starting from $1,200&nbsp;per&nbsp;month.
-          </p>
-          <ul>
-            <li><i class="fas fa-check-circle"></i> Unique design tailored to your brand, with up to 10 pages</li>
-            <li><i class="fas fa-check-circle"></i> Blog or news section for regular content updates</li>
-            <li><i class="fas fa-check-circle"></i> Advanced contact and enquiry forms</li>
-            <li><i class="fas fa-check-circle"></i> On-page SEO optimisation and keyword research</li>
-            <li><i class="fas fa-check-circle"></i> CMS training and documentation</li>
-          </ul>
+
+    <!-- Services Overview -->
+    <section class="services-section">
+      <div class="container">
+        <h2 class="section-title">What We Offer</h2>
+        <div class="service-cards">
+          <div class="service-card">
+            <i class="fa-solid fa-laptop-code"></i>
+            <h3>Web Design &amp; Development</h3>
+            <p>Custom websites tailored to your brand, built with modern technologies for performance and scalability.</p>
+          </div>
+          <div class="service-card">
+            <i class="fa-solid fa-chart-line"></i>
+            <h3>SEO &amp; Marketing</h3>
+            <p>Optimisation strategies to boost your search rankings, drive traffic and convert visitors into customers.</p>
+          </div>
+          <div class="service-card">
+            <i class="fa-solid fa-mobile-screen-button"></i>
+            <h3>App Development</h3>
+            <p>Intuitive and engaging mobile applications that keep your users connected and delighted.</p>
+          </div>
         </div>
       </div>
     </section>
-    <!-- SEO Booster Plan -->
-    <section class="service-detail" id="seo">
-      <div class="container detail-grid">
-        <div class="detail-icon reveal fade-in-up">
-          <i class="fas fa-chart-line"></i>
+
+    <!-- Packages Section -->
+    <section class="packages">
+      <div class="container">
+        <h2 class="section-title">Packages &amp; Plans</h2>
+        <div class="packages-grid">
+          <!-- Basic Web Package -->
+          <div class="package-card">
+            <i class="fa-solid fa-laptop-code"></i>
+            <h3>Basic Web Package</h3>
+            <p>Perfect for startups and sole traders seeking a polished online presence.</p>
+            <ul>
+              <li><i class="fa-solid fa-check-circle"></i> Custom template with your branding</li>
+              <li><i class="fa-solid fa-check-circle"></i> 1–3 responsive pages</li>
+              <li><i class="fa-solid fa-check-circle"></i> Contact form &amp; analytics</li>
+              <li><i class="fa-solid fa-check-circle"></i> Starter SEO setup</li>
+            </ul>
+            <p class="price">From $1,000–3,000 AUD</p>
+          </div>
+          <!-- Standard Web + SEO Package -->
+          <div class="package-card">
+            <i class="fa-solid fa-layer-group"></i>
+            <h3>Standard Web + SEO</h3>
+            <p>Designed for growing businesses demanding both design and optimisation.</p>
+            <ul>
+              <li><i class="fa-solid fa-check-circle"></i> Custom design up to 10 pages</li>
+              <li><i class="fa-solid fa-check-circle"></i> Blog &amp; CMS integration</li>
+              <li><i class="fa-solid fa-check-circle"></i> Advanced forms &amp; booking tools</li>
+              <li><i class="fa-solid fa-check-circle"></i> On‑page SEO &amp; keyword research</li>
+            </ul>
+            <p class="price">From $3,000–8,000 AUD<br /><small>SEO retainer from $1,200/month</small></p>
+          </div>
+          <!-- SEO Booster Plan -->
+          <div class="package-card">
+            <i class="fa-solid fa-chart-line"></i>
+            <h3>SEO Booster Plan</h3>
+            <p>Ongoing optimisation to improve visibility and drive organic traffic.</p>
+            <ul>
+              <li><i class="fa-solid fa-check-circle"></i> Monthly keyword &amp; content strategy</li>
+              <li><i class="fa-solid fa-check-circle"></i> Technical &amp; on‑page optimisation</li>
+              <li><i class="fa-solid fa-check-circle"></i> Quality link building</li>
+              <li><i class="fa-solid fa-check-circle"></i> Detailed performance reports</li>
+            </ul>
+            <p class="price">From $1,200–2,500 AUD / month</p>
+          </div>
         </div>
-        <div class="detail-content reveal fade-in-up" data-delay="0.2">
-          <h2>🚀 SEO Booster Plan</h2>
-          <p>
-            A recurring optimisation service that amplifies your search
-            visibility. Ideal for local service providers and small e-commerce
-            stores. Industry benchmarks suggest small business SEO packages run
-            between $1,200 and $2,500&nbsp;AUD per month.
-          </p>
-          <ul>
-            <li><i class="fas fa-check-circle"></i> Monthly keyword research and strategy updates</li>
-            <li><i class="fas fa-check-circle"></i> On-page and technical optimisation</li>
-            <li><i class="fas fa-check-circle"></i> High-quality link building</li>
-            <li><i class="fas fa-check-circle"></i> Content optimisation and publishing guidance</li>
-            <li><i class="fas fa-check-circle"></i> Comprehensive performance reporting each month</li>
-          </ul>
+        <div style="text-align: center; margin-top: 30px;">
+          <a href="../contact/index.html" class="btn btn-primary">Get a Quote</a>
         </div>
       </div>
     </section>
-    <!-- CTA -->
+
+    <!-- CTA Section -->
     <section class="cta">
-      <div class="container cta-content reveal scale-in">
-        <h2>Have an idea?</h2>
-        <p>Let’s build something amazing together. Reach out to our team today.</p>
-        <a href="../contact/index.html" class="btn btn-primary">Get in Touch</a>
+      <div class="container cta-content">
+        <h2>Ready to start your project?</h2>
+        <p>Let’s work together to create something amazing. Reach out for a personalised consultation.</p>
+        <a href="../contact/index.html" class="btn btn-primary">Contact Us</a>
       </div>
     </section>
+
     <!-- Footer -->
     <footer class="footer">
       <div class="container footer-grid">
         <div class="footer-about">
           <h3>Dvitix</h3>
           <p>
-            We are a multidisciplinary team of designers, developers and
-            strategists dedicated to creating digital experiences that inspire.
+            We are a multidisciplinary team of designers, developers and strategists dedicated to
+            crafting digital experiences that inspire and drive results.
           </p>
         </div>
         <div class="footer-links">
           <h4>Links</h4>
-          <ul>
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="../services/index.html">Services</a></li>
-            <li><a href="../index.html#choose">Why&nbsp;Us</a></li>
-            <li><a href="../contact/index.html">Contact</a></li>
-          </ul>
+          <a href="../index.html">Home</a>
+          <a href="index.html">Services</a>
+          <a href="../why-us/index.html">Why&nbsp;Us</a>
+          <a href="../about/index.html">About</a>
+          <a href="../contact/index.html">Contact</a>
         </div>
         <div class="footer-social">
           <h4>Follow Us</h4>
@@ -175,6 +163,7 @@
         <p>&copy; 2025 Dvitix Digital Studio. All rights reserved.</p>
       </div>
     </footer>
+    <!-- Scripts -->
     <script src="../js/script.js"></script>
   </body>
 </html>

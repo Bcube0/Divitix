@@ -2,14 +2,16 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dvitix Digital Studio – Elevate Your Vision</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-    <!-- Font Awesome -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome icons -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
@@ -17,73 +19,58 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <!-- Stylesheet -->
+    <!-- Custom stylesheet -->
     <link rel="stylesheet" href="css/style.css" />
-    <!-- GSAP (optional for scroll animations; not strictly required) -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   </head>
   <body>
-    <!-- Header -->
+    <!-- Header Navigation -->
     <header class="header">
-      <div class="container nav-container">
-        <div class="logo">
-          <a href="#" data-page="home">Dvitix</a>
-        </div>
-        <nav class="nav" id="nav-menu">
+      <div class="nav-container">
+        <div class="logo"><a href="index.html">Dvitix</a></div>
+        <nav>
           <ul class="nav-list">
-            <!-- data-page attributes help the JS highlight the current page -->
-            <li><a href="index.html" class="nav-link active" data-page="home">Home</a></li>
-            <li><a href="services/index.html" class="nav-link" data-page="services">Services</a></li>
-            <li><a href="why-us/index.html" class="nav-link" data-page="whyus">Why Us</a></li>
-            <li><a href="about/index.html" class="nav-link" data-page="about">About</a></li>
-            <li><a href="contact/index.html" class="nav-link" data-page="contact">Contact</a></li>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="services/index.html">Services</a></li>
+            <li><a href="why-us/index.html">Why&nbsp;Us</a></li>
+            <li><a href="about/index.html">About</a></li>
+            <li><a href="contact/index.html">Contact</a></li>
           </ul>
         </nav>
-        <div class="hamburger" id="hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
       </div>
     </header>
+
     <!-- Hero Section -->
-    <section class="hero new-hero">
-      <div class="hero-overlay"></div>
-      <div class="starfield"></div>
-      <div class="container hero-content">
-        <h1 class="hero-title reveal">Transforming Ideas into Digital Realities 🚀</h1>
-        <p class="hero-subtitle reveal" data-delay="0.1">
+    <section class="hero">
+      <div class="container">
+        <h1 class="hero-title">Transforming Ideas into Digital Realities 🚀</h1>
+        <p class="hero-subtitle">
           We craft immersive digital experiences that connect people and brands.
         </p>
-        <a href="services/index.html" class="btn btn-primary reveal" data-delay="0.2">Explore Our Packages</a>
+        <a href="services/index.html" class="btn btn-primary">Explore Our Packages</a>
       </div>
     </section>
-    <!-- Features Section -->
+
+    <!-- What We Do Section -->
     <section class="features">
       <div class="container">
-        <h2 class="section-title reveal fade-in-up">What We Do</h2>
+        <h2 class="section-title">What We Do</h2>
         <div class="features-grid">
-          <!-- Design & UX -->
-          <div class="feature-card reveal fade-in-left">
+          <div class="feature-card">
             <div class="feature-icon">🎨</div>
             <h3>Design &amp; UX</h3>
             <p>We craft intuitive interfaces and beautiful visuals that resonate with your audience.</p>
           </div>
-          <!-- Development & Tech -->
-          <div class="feature-card reveal fade-in-up" data-delay="0.1">
+          <div class="feature-card">
             <div class="feature-icon">💻</div>
             <h3>Development &amp; Tech</h3>
             <p>Our engineers build robust, scalable solutions using modern technologies.</p>
           </div>
-          <!-- SEO & Marketing -->
-          <div class="feature-card reveal fade-in-up" data-delay="0.2">
+          <div class="feature-card">
             <div class="feature-icon">📈</div>
             <h3>SEO &amp; Marketing</h3>
             <p>We optimise your site and content to reach the right audience and drive growth.</p>
           </div>
-          <!-- Support & Growth -->
-          <div class="feature-card reveal fade-in-right" data-delay="0.3">
+          <div class="feature-card">
             <div class="feature-icon">🤝</div>
             <h3>Support &amp; Growth</h3>
             <p>From launch to long term, we’re here to support your digital journey.</p>
@@ -91,27 +78,28 @@
         </div>
       </div>
     </section>
-    <!-- Projects Section -->
+
+    <!-- Our Work Section -->
     <section class="projects">
       <div class="container">
-        <h2 class="section-title reveal fade-in-up">Our Work</h2>
+        <h2 class="section-title">Our Work</h2>
         <div class="projects-grid">
-          <div class="project-item reveal scale-in">
-            <img src="images/portfolio1.png" alt="Website project" />
+          <div class="project-item">
+            <img src="placeholder_light_gray_block.png" alt="Website project" />
             <div class="project-overlay">
               <h4>Website Design</h4>
-              <p>Modern dark‑themed site with gradient highlights.</p>
+              <p>Modern site with gradient highlights.</p>
             </div>
           </div>
-          <div class="project-item reveal scale-in" data-delay="0.1">
-            <img src="images/portfolio2.png" alt="App interface project" />
+          <div class="project-item">
+            <img src="placeholder_light_gray_block.png" alt="App interface project" />
             <div class="project-overlay">
               <h4>App Interface</h4>
               <p>Colourful mobile experience with messaging and profiles.</p>
             </div>
           </div>
-          <div class="project-item reveal scale-in" data-delay="0.2">
-            <img src="images/portfolio3.png" alt="Dashboard project" />
+          <div class="project-item">
+            <img src="placeholder_light_gray_block.png" alt="Dashboard project" />
             <div class="project-overlay">
               <h4>Data Dashboard</h4>
               <p>Futuristic analytics with real‑time charts and graphs.</p>
@@ -120,41 +108,42 @@
         </div>
       </div>
     </section>
-    <!-- Process Section -->
+
+    <!-- Our Process Section -->
     <section class="process">
       <div class="container">
-      <h2 class="section-title reveal fade-in-up">Our Process</h2>
-      <div class="steps-grid">
-        <div class="step-card reveal fade-in-left">
-          <div class="step-icon">🔍</div>
-          <h3>Discover</h3>
-          <p>We start by listening. Through research and workshops, we align on goals and audience.</p>
+        <h2 class="section-title">Our Process</h2>
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-icon">🔍</div>
+            <h3>Discover</h3>
+            <p>We start by listening. Through research and workshops, we align on goals and audience.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-icon">🎨</div>
+            <h3>Design</h3>
+            <p>We sketch, prototype and refine to create delightful user experiences.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-icon">💻</div>
+            <h3>Develop</h3>
+            <p>Our developers build robust, scalable products using modern technologies.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-icon">🚀</div>
+            <h3>Launch</h3>
+            <p>We deploy, optimise and grow your digital presence for lasting impact.</p>
+          </div>
         </div>
-        <div class="step-card reveal fade-in-up" data-delay="0.1">
-          <div class="step-icon">🎨</div>
-          <h3>Design</h3>
-          <p>We sketch, prototype and refine to create delightful user experiences.</p>
-        </div>
-        <div class="step-card reveal fade-in-up" data-delay="0.2">
-          <div class="step-icon">💻</div>
-          <h3>Develop</h3>
-          <p>Our developers build robust, scalable products using modern technologies.</p>
-        </div>
-        <div class="step-card reveal fade-in-right" data-delay="0.3">
-          <div class="step-icon">🚀</div>
-          <h3>Launch</h3>
-          <p>We deploy, optimise and grow your digital presence for lasting impact.</p>
-        </div>
-      </div>
       </div>
     </section>
+
     <!-- Packages Section -->
     <section class="packages" id="packages">
       <div class="container">
-        <h2 class="section-title reveal fade-in-up">Packages &amp; Services</h2>
+        <h2 class="section-title">Packages &amp; Services</h2>
         <div class="packages-grid">
-          <!-- Basic Web Package -->
-          <div class="package-card reveal fade-in-left">
+          <div class="package-card">
             <i class="fa-solid fa-laptop-code"></i>
             <h3>Basic Web Package</h3>
             <p>Perfect for startups and sole traders seeking a polished online presence.</p>
@@ -166,8 +155,7 @@
             </ul>
             <p class="price">From $1,000–3,000 AUD</p>
           </div>
-          <!-- Standard Web + SEO Package -->
-          <div class="package-card reveal fade-in-up" data-delay="0.1">
+          <div class="package-card">
             <i class="fa-solid fa-layer-group"></i>
             <h3>Standard Web + SEO</h3>
             <p>Designed for growing businesses demanding both design and optimisation.</p>
@@ -179,8 +167,7 @@
             </ul>
             <p class="price">From $3,000–8,000 AUD<br /><small>SEO retainer from $1,200/month</small></p>
           </div>
-          <!-- SEO Booster Plan -->
-          <div class="package-card reveal fade-in-right" data-delay="0.2">
+          <div class="package-card">
             <i class="fa-solid fa-chart-line"></i>
             <h3>SEO Booster Plan</h3>
             <p>Ongoing optimisation to improve visibility and drive organic traffic.</p>
@@ -195,34 +182,33 @@
         </div>
       </div>
     </section>
+
     <!-- Call to Action -->
     <section class="cta">
-      <div class="container cta-content reveal scale-in">
+      <div class="container cta-content">
         <h2>Ready to bring your vision to life?</h2>
         <p>Partner with Dvitix and turn your ideas into vibrant digital experiences.</p>
         <a href="contact/index.html" class="btn btn-primary">Contact Us</a>
       </div>
     </section>
+
     <!-- Footer -->
     <footer class="footer">
       <div class="container footer-grid">
         <div class="footer-about">
           <h3>Dvitix</h3>
           <p>
-            We are a multidisciplinary team of designers, developers and
-            strategists dedicated to crafting digital experiences that inspire and
-            drive results.
+            We are a multidisciplinary team of designers, developers and strategists dedicated to
+            crafting digital experiences that inspire and drive results.
           </p>
         </div>
         <div class="footer-links">
           <h4>Links</h4>
-          <ul>
-            <li><a href="index.html" data-page="home">Home</a></li>
-            <li><a href="services/index.html" data-page="services">Services</a></li>
-            <li><a href="why-us/index.html" data-page="whyus">Why&nbsp;Us</a></li>
-            <li><a href="about/index.html" data-page="about">About</a></li>
-            <li><a href="contact/index.html" data-page="contact">Contact</a></li>
-          </ul>
+          <a href="index.html">Home</a>
+          <a href="services/index.html">Services</a>
+          <a href="why-us/index.html">Why&nbsp;Us</a>
+          <a href="about/index.html">About</a>
+          <a href="contact/index.html">Contact</a>
         </div>
         <div class="footer-social">
           <h4>Follow Us</h4>
@@ -238,6 +224,7 @@
         <p>&copy; 2025 Dvitix Digital Studio. All rights reserved.</p>
       </div>
     </footer>
+    <!-- Scripts -->
     <script src="js/script.js"></script>
   </body>
 </html>

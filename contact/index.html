@@ -2,20 +2,16 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact Dvitix – Get in Touch</title>
+    <title>Contact Us – Dvitix</title>
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link
-      rel="preconnect"
-      href="https://fonts.gstatic.com"
-      crossorigin
-    />
-    <!-- Use Manrope for clarity and modern feel -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <!-- Font Awesome icons -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
@@ -23,113 +19,81 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <!-- Custom stylesheet -->
     <link rel="stylesheet" href="../css/style.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   </head>
   <body>
     <!-- Header -->
     <header class="header">
-      <div class="container nav-container">
-        <div class="logo">
-          <!-- Use relative path for local browsing -->
-          <a href="../index.html">Dvitix</a>
-        </div>
-        <nav class="nav" id="nav-menu">
+      <div class="nav-container">
+        <div class="logo"><a href="../index.html">Dvitix</a></div>
+        <nav>
           <ul class="nav-list">
-            <li><a href="../index.html" class="nav-link" data-page="home">Home</a></li>
-            <li><a href="../services/index.html" class="nav-link" data-page="services">Services</a></li>
-            <li><a href="../why-us/index.html" class="nav-link" data-page="whyus">Why&nbsp;Us</a></li>
-            <li><a href="../about/index.html" class="nav-link" data-page="about">About</a></li>
-            <li><a href="index.html" class="nav-link active" data-page="contact">Contact</a></li>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../services/index.html">Services</a></li>
+            <li><a href="../why-us/index.html">Why&nbsp;Us</a></li>
+            <li><a href="../about/index.html">About</a></li>
+            <li><a href="index.html" class="active">Contact</a></li>
           </ul>
         </nav>
-        <div class="hamburger" id="hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
       </div>
     </header>
-    <!-- Page Hero -->
-    <section class="page-hero parallax-hero">
+
+    <!-- Hero Section -->
+    <section class="hero">
       <div class="container">
-        <h1>Contact Us</h1>
-        <p>We'd love to hear about your next big project.</p>
+        <h1 class="hero-title">Get in Touch</h1>
+        <p class="hero-subtitle">We’d love to hear about your project and how we can help.</p>
       </div>
     </section>
-    <!-- Contact Section -->
+
+    <!-- Contact Form Section -->
     <section class="contact-section">
-      <div class="container contact-grid">
-        <div class="contact-info reveal fade-in-left">
-          <h2>Get in Touch</h2>
-          <p>
-            Send us a message or reach out through our contact details below. Our
-            team will respond promptly to discuss your project.
-          </p>
-          <ul class="contact-details">
-            <li><i class="fas fa-envelope"></i> hello@dvitixdigital.com</li>
-            <li><i class="fas fa-phone"></i> +61&nbsp;(02)&nbsp;8000&nbsp;1234</li>
-            <li>
-              <i class="fas fa-map-marker-alt"></i> Level&nbsp;2, 123 Example
-              Street, Sydney NSW&nbsp;2000
-            </li>
-          </ul>
-          <div class="map-container">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3312.927962682!2d151.206889915209!3d-33.867486980661!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12ae401e0c8d3d%3A0x9c5c8d8d8d8d8d8d!2sSydney%20NSW%202000%2C%20Australia!5e0!3m2!1sen!2sau!4v1729345678901" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <div class="container">
+        <h2 class="section-title">Send Us a Message</h2>
+        <form class="contact-form" onsubmit="event.preventDefault(); alert('Thank you for reaching out!');">
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="email" placeholder="Your Email" required />
+          <textarea name="message" placeholder="Your Message" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+        <div class="contact-info">
+          <div class="info-item">
+            <i class="fa-solid fa-envelope"></i>
+            <h4>Email</h4>
+            <p><a href="mailto:info@dvitix.com.au">info@dvitix.com.au</a></p>
+          </div>
+          <div class="info-item">
+            <i class="fa-solid fa-phone"></i>
+            <h4>Phone</h4>
+            <p><a href="tel:+61123456789">+61 123 456 789</a></p>
+          </div>
+          <div class="info-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <h4>Location</h4>
+            <p>Sydney, NSW, Australia</p>
           </div>
         </div>
-        <div class="contact-form reveal fade-in-right">
-          <form action="#" method="post" onsubmit="return false;">
-            <div class="input-group">
-              <input type="text" id="name" required />
-              <label for="name">Name</label>
-            </div>
-            <div class="input-group">
-              <input type="email" id="email" required />
-              <label for="email">Email</label>
-            </div>
-            <div class="input-group">
-              <input type="text" id="subject" required />
-              <label for="subject">Subject</label>
-            </div>
-            <div class="input-group textarea-group">
-              <textarea id="message" rows="5" required></textarea>
-              <label for="message">Message</label>
-            </div>
-            <button type="submit" class="btn btn-primary">Send Message</button>
-          </form>
-        </div>
       </div>
     </section>
-    <!-- CTA -->
-    <section class="cta">
-      <div class="container cta-content reveal scale-in">
-        <h2>Let’s Work Together</h2>
-        <p>
-          Ready to bring your vision to life? Our team of experts is here to
-          help. Contact us today and let’s build something incredible.
-        </p>
-      </div>
-    </section>
+
     <!-- Footer -->
     <footer class="footer">
       <div class="container footer-grid">
         <div class="footer-about">
           <h3>Dvitix</h3>
           <p>
-            We are a multidisciplinary team of designers, developers and
-            strategists dedicated to creating digital experiences that inspire.
+            We are a multidisciplinary team of designers, developers and strategists dedicated to
+            crafting digital experiences that inspire and drive results.
           </p>
         </div>
         <div class="footer-links">
           <h4>Links</h4>
-          <ul>
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="../services/index.html">Services</a></li>
-            <li><a href="../index.html#choose">Why&nbsp;Us</a></li>
-            <li><a href="index.html">Contact</a></li>
-          </ul>
+          <a href="../index.html">Home</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../about/index.html">About</a>
+          <a href="../why-us/index.html">Why&nbsp;Us</a>
+          <a href="index.html">Contact</a>
         </div>
         <div class="footer-social">
           <h4>Follow Us</h4>
@@ -145,6 +109,7 @@
         <p>&copy; 2025 Dvitix Digital Studio. All rights reserved.</p>
       </div>
     </footer>
+    <!-- Scripts -->
     <script src="../js/script.js"></script>
   </body>
 </html>
