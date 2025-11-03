@@ -4,39 +4,37 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About Us – Dvitix</title>
-    <!-- Google Fonts -->
+    <!-- Google Fonts: Poppins -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <!-- Import both Inter for body text and Orbitron for display headings -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <!-- Font Awesome icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-      integrity="sha512-KxQ3Vb9wpCG/yBObPq8E6nQVw1Gc7YCOzxhx6D2D0gZTOq+uQ+Yp7tK4DfCqzvMP3qhI3ZqUOqQAY/EPlmXiJA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+    <!-- Site icon -->
+    <link rel="icon" type="image/png" href="../images/logo.png" />
     <!-- Custom stylesheet -->
     <link rel="stylesheet" href="../css/style.css" />
   </head>
   <body>
     <!-- Header -->
     <header class="header">
-      <div class="nav-container">
+      <div class="container nav-container">
         <div class="logo"><a href="../index.html">Dvitix</a></div>
-        <nav>
+        <nav class="nav" id="nav-menu">
           <ul class="nav-list">
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="../services/index.html">Services</a></li>
-            <li><a href="../why-us/index.html">Why&nbsp;Us</a></li>
-            <li><a href="index.html" class="active">About</a></li>
-            <li><a href="../contact/index.html">Contact</a></li>
+            <li><a href="../index.html" class="nav-link">Home</a></li>
+            <li><a href="../services/index.html" class="nav-link">Services</a></li>
+            <li><a href="../whats-new/index.html" class="nav-link">What's&nbsp;New</a></li>
+            <li><a href="index.html" class="nav-link active">About</a></li>
+            <li><a href="../contact/index.html" class="nav-link">Contact</a></li>
           </ul>
         </nav>
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </div>
     </header>
 
@@ -45,6 +43,39 @@
       <div class="container">
         <h1 class="hero-title">About Dvitix</h1>
         <p class="hero-subtitle">Our story and mission to empower businesses through digital innovation.</p>
+      </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="features">
+      <div class="container">
+        <h2 class="section-title">Why Choose Us</h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">⭐</div>
+            <h3>Expertise &amp; Experience</h3>
+            <p>
+              Our team brings together years of experience across design, development and marketing.
+              We stay up‑to‑date with the latest technologies to deliver forward‑thinking solutions.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🤝</div>
+            <h3>Collaborative Approach</h3>
+            <p>
+              We see our clients as partners. Through collaboration and transparency, we ensure your
+              vision is realised and your objectives are met.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🎯</div>
+            <h3>Results‑Driven</h3>
+            <p>
+              Our work is centred on achieving your goals. From improved conversions to brand
+              recognition, we measure success by the impact we help you make.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -98,7 +129,7 @@
           <ul>
             <li><a href="../index.html">Home</a></li>
             <li><a href="../services/index.html">Services</a></li>
-            <li><a href="../why-us/index.html">Why&nbsp;Us</a></li>
+            <li><a href="../whats-new/index.html">What's&nbsp;New</a></li>
             <li><a href="index.html">About</a></li>
             <li><a href="../contact/index.html">Contact</a></li>
           </ul>

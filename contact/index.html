@@ -4,39 +4,37 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact Us – Dvitix</title>
-    <!-- Google Fonts -->
+    <!-- Google Fonts: Poppins for a softer, elegant look -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <!-- Import both Inter for body text and Orbitron for display headings -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
-    />
-    <!-- Font Awesome icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-      integrity="sha512-KxQ3Vb9wpCG/yBObPq8E6nQVw1Gc7YCOzxhx6D2D0gZTOq+uQ+Yp7tK4DfCqzvMP3qhI3ZqUOqQAY/EPlmXiJA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
     />
     <!-- Custom stylesheet -->
     <link rel="stylesheet" href="../css/style.css" />
+    <!-- Site icon -->
+    <link rel="icon" type="image/png" href="../images/logo.png" />
   </head>
   <body>
     <!-- Header -->
     <header class="header">
-      <div class="nav-container">
+      <div class="container nav-container">
         <div class="logo"><a href="../index.html">Dvitix</a></div>
-        <nav>
+        <nav class="nav" id="nav-menu">
           <ul class="nav-list">
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="../services/index.html">Services</a></li>
-            <li><a href="../why-us/index.html">Why&nbsp;Us</a></li>
-            <li><a href="../about/index.html">About</a></li>
-            <li><a href="index.html" class="active">Contact</a></li>
+            <li><a href="../index.html" class="nav-link">Home</a></li>
+            <li><a href="../services/index.html" class="nav-link">Services</a></li>
+            <li><a href="../whats-new/index.html" class="nav-link">What's&nbsp;New</a></li>
+            <li><a href="../about/index.html" class="nav-link">About</a></li>
+            <li><a href="index.html" class="nav-link active">Contact</a></li>
           </ul>
         </nav>
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </div>
     </header>
 
@@ -60,17 +58,17 @@
         </form>
         <div class="contact-info">
           <div class="info-item">
-            <i class="fa-solid fa-envelope"></i>
+            <img src="../images/envelope.svg" alt="Email" />
             <h4>Email</h4>
             <p><a href="mailto:info@dvitix.com.au">info@dvitix.com.au</a></p>
           </div>
           <div class="info-item">
-            <i class="fa-solid fa-phone"></i>
+            <img src="../images/phone.svg" alt="Phone" />
             <h4>Phone</h4>
             <p><a href="tel:+61123456789">+61 123 456 789</a></p>
           </div>
           <div class="info-item">
-            <i class="fa-solid fa-location-dot"></i>
+            <img src="../images/location.svg" alt="Location" />
             <h4>Location</h4>
             <p>Sydney, NSW, Australia</p>
           </div>
@@ -101,7 +99,7 @@
           <ul>
             <li><a href="../index.html">Home</a></li>
             <li><a href="../services/index.html">Services</a></li>
-            <li><a href="../why-us/index.html">Why&nbsp;Us</a></li>
+            <li><a href="../whats-new/index.html">What's&nbsp;New</a></li>
             <li><a href="../about/index.html">About</a></li>
             <li><a href="index.html">Contact</a></li>
           </ul>

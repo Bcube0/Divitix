@@ -4,39 +4,37 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Our Services – Dvitix</title>
-    <!-- Google Fonts -->
+    <!-- Google Fonts: Poppins -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <!-- Import both Inter for body text and Orbitron for display headings -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <!-- Font Awesome icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-      integrity="sha512-KxQ3Vb9wpCG/yBObPq8E6nQVw1Gc7YCOzxhx6D2D0gZTOq+uQ+Yp7tK4DfCqzvMP3qhI3ZqUOqQAY/EPlmXiJA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+    <!-- Site icon -->
+    <link rel="icon" type="image/png" href="../images/logo.png" />
     <!-- Custom stylesheet -->
     <link rel="stylesheet" href="../css/style.css" />
   </head>
   <body>
     <!-- Header -->
     <header class="header">
-      <div class="nav-container">
+      <div class="container nav-container">
         <div class="logo"><a href="../index.html">Dvitix</a></div>
-        <nav>
+        <nav class="nav" id="nav-menu">
           <ul class="nav-list">
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="index.html" class="active">Services</a></li>
-            <li><a href="../why-us/index.html">Why&nbsp;Us</a></li>
-            <li><a href="../about/index.html">About</a></li>
-            <li><a href="../contact/index.html">Contact</a></li>
+            <li><a href="../index.html" class="nav-link">Home</a></li>
+            <li><a href="index.html" class="nav-link active">Services</a></li>
+            <li><a href="../whats-new/index.html" class="nav-link">What's&nbsp;New</a></li>
+            <li><a href="../about/index.html" class="nav-link">About</a></li>
+            <li><a href="../contact/index.html" class="nav-link">Contact</a></li>
           </ul>
         </nav>
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </div>
     </header>
 
@@ -54,17 +52,17 @@
         <h2 class="section-title">What We Offer</h2>
         <div class="service-cards">
           <div class="service-card">
-            <i class="fa-solid fa-laptop-code"></i>
+            <i>💻</i>
             <h3>Web Design &amp; Development</h3>
             <p>Custom websites tailored to your brand, built with modern technologies for performance and scalability.</p>
           </div>
           <div class="service-card">
-            <i class="fa-solid fa-chart-line"></i>
+            <i>📈</i>
             <h3>SEO &amp; Marketing</h3>
             <p>Optimisation strategies to boost your search rankings, drive traffic and convert visitors into customers.</p>
           </div>
           <div class="service-card">
-            <i class="fa-solid fa-mobile-screen-button"></i>
+            <i>📱</i>
             <h3>App Development</h3>
             <p>Intuitive and engaging mobile applications that keep your users connected and delighted.</p>
           </div>
@@ -79,40 +77,40 @@
         <div class="packages-grid">
           <!-- Basic Web Package -->
           <div class="package-card">
-            <i class="fa-solid fa-laptop-code"></i>
+            <i>💻</i>
             <h3>Basic Web Package</h3>
             <p>Perfect for startups and sole traders seeking a polished online presence.</p>
             <ul>
-              <li><i class="fa-solid fa-check-circle"></i> Custom template with your branding</li>
-              <li><i class="fa-solid fa-check-circle"></i> 1–3 responsive pages</li>
-              <li><i class="fa-solid fa-check-circle"></i> Contact form &amp; analytics</li>
-              <li><i class="fa-solid fa-check-circle"></i> Starter SEO setup</li>
+              <li><span class="check-icon">✓</span> Custom template with your branding</li>
+              <li><span class="check-icon">✓</span> 1–3 responsive pages</li>
+              <li><span class="check-icon">✓</span> Contact form &amp; analytics</li>
+              <li><span class="check-icon">✓</span> Starter SEO setup</li>
             </ul>
             <p class="price">From $1,000–3,000 AUD</p>
           </div>
           <!-- Standard Web + SEO Package -->
           <div class="package-card">
-            <i class="fa-solid fa-layer-group"></i>
+            <i>📦</i>
             <h3>Standard Web + SEO</h3>
             <p>Designed for growing businesses demanding both design and optimisation.</p>
             <ul>
-              <li><i class="fa-solid fa-check-circle"></i> Custom design up to 10 pages</li>
-              <li><i class="fa-solid fa-check-circle"></i> Blog &amp; CMS integration</li>
-              <li><i class="fa-solid fa-check-circle"></i> Advanced forms &amp; booking tools</li>
-              <li><i class="fa-solid fa-check-circle"></i> On‑page SEO &amp; keyword research</li>
+              <li><span class="check-icon">✓</span> Custom design up to 10 pages</li>
+              <li><span class="check-icon">✓</span> Blog &amp; CMS integration</li>
+              <li><span class="check-icon">✓</span> Advanced forms &amp; booking tools</li>
+              <li><span class="check-icon">✓</span> On‑page SEO &amp; keyword research</li>
             </ul>
             <p class="price">From $3,000–8,000 AUD<br /><small>SEO retainer from $1,200/month</small></p>
           </div>
           <!-- SEO Booster Plan -->
           <div class="package-card">
-            <i class="fa-solid fa-chart-line"></i>
+            <i>🚀</i>
             <h3>SEO Booster Plan</h3>
             <p>Ongoing optimisation to improve visibility and drive organic traffic.</p>
             <ul>
-              <li><i class="fa-solid fa-check-circle"></i> Monthly keyword &amp; content strategy</li>
-              <li><i class="fa-solid fa-check-circle"></i> Technical &amp; on‑page optimisation</li>
-              <li><i class="fa-solid fa-check-circle"></i> Quality link building</li>
-              <li><i class="fa-solid fa-check-circle"></i> Detailed performance reports</li>
+              <li><span class="check-icon">✓</span> Monthly keyword &amp; content strategy</li>
+              <li><span class="check-icon">✓</span> Technical &amp; on‑page optimisation</li>
+              <li><span class="check-icon">✓</span> Quality link building</li>
+              <li><span class="check-icon">✓</span> Detailed performance reports</li>
             </ul>
             <p class="price">From $1,200–2,500 AUD / month</p>
           </div>
@@ -155,7 +153,7 @@
           <ul>
             <li><a href="../index.html">Home</a></li>
             <li><a href="index.html">Services</a></li>
-            <li><a href="../why-us/index.html">Why&nbsp;Us</a></li>
+            <li><a href="../whats-new/index.html">What's&nbsp;New</a></li>
             <li><a href="../about/index.html">About</a></li>
             <li><a href="../contact/index.html">Contact</a></li>
           </ul>
