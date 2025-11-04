@@ -758,3 +758,116 @@ a {
   transform: translateY(-4px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
 }
+
+/* ------------------------------------------------------------------ */
+/* Stats Section                                                      */
+/* ------------------------------------------------------------------ */
+
+/* Wrapper for the statistics cards. We space the section generously and
+   centre the content to draw the eye. */
+.stats {
+  padding: 80px 20px;
+  background-image: linear-gradient(160deg, var(--secondary) 0%, var(--primary) 100%);
+  color: var(--neutral-light);
+  text-align: center;
+}
+
+/* Grid layout for statistic cards. Each card takes equal space and
+   wraps responsively on smaller screens. */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 30px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Individual stat card styling. A soft border and subtle shadow create
+   separation from the background. */
+.stat-card {
+  background-color: var(--neutral-dark);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 40px 20px;
+  box-shadow: 0 0 12px rgba(0, 230, 254, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Animate card lift and glow on hover to add interactivity. */
+.stat-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 20px rgba(255, 110, 199, 0.35);
+}
+
+/* Large number styling for stats. We use an accent gradient and
+   background‑clip to create a shimmering neon effect. */
+.stat-card h3 {
+  font-size: 3rem;
+  margin: 0 0 10px;
+  font-weight: 700;
+  background-image: linear-gradient(90deg, var(--accent) 0%, var(--accent2) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.stat-card p {
+  margin: 0;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* ------------------------------------------------------------------ */
+/* Worked With Section                                                */
+/* ------------------------------------------------------------------ */
+
+/* Section wrapper with a dark backdrop similar to the hero gradient. */
+.worked-with {
+  padding: 80px 20px;
+  background-image: linear-gradient(180deg, var(--primary) 0%, var(--secondary) 100%);
+  color: var(--neutral-light);
+  text-align: center;
+}
+
+/* Grid to hold partner logos. We set a generous gap and a flexible
+   minimum width so the logos wrap gracefully. */
+.logos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 30px;
+  max-width: 800px;
+  margin: 40px auto 0;
+}
+
+/* Each logo item appears as a card with a soft glow. Rather than
+   requiring image files, we insert partner names inside to act as
+   placeholders. You can replace the text with <img> tags as needed. */
+.logo-item {
+  background-color: var(--neutral-dark);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  box-shadow: 0 0 10px rgba(0, 230, 254, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Add a luminous border and lift on hover to make the logos pop. */
+.logo-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 20px rgba(255, 110, 199, 0.35);
+}
+
+.logo-item span {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+/* If you add logo images, constrain their size and maintain aspect ratio. */
+.logo-item img {
+  max-width: 100%;
+  max-height: 70px;
+}

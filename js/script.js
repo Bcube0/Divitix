@@ -46,5 +46,64 @@
       // If IntersectionObserver is not supported, show all elements immediately
       reveals.forEach((el) => el.classList.add('visible'));
     }
+
+    // Animated counters for the statistics section. Each element with the
+    // `counter` class will count up from 0 to its data-target attribute
+    // when it enters the viewport. A suffix (e.g. '+') can be provided
+    // via the data-suffix attribute.
+    const counters = document.querySelectorAll('.counter');
+    if (counters.length > 0 && 'IntersectionObserver' in window) {
+      const counterObserver = new IntersectionObserver(
+        (entries, obs) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const el = entry.target;
+              const target = parseInt(el.getAttribute('data-target')) || 0;
+              const suffix = el.getAttribute('data-suffix') || '';
+              let start = null;
+              const duration = 2000; // total duration of the count animation in ms
+              function animate(timestamp) {
+                if (!start) start = timestamp;
+                const progress = timestamp - start;
+                const ratio = Math.min(progress / duration, 1);
+                const current = Math.floor(ratio * target);
+                el.textContent = `${current}${suffix}`;
+                if (progress < duration) {
+                  window.requestAnimationFrame(animate);
+                } else {
+                  el.textContent = `${target}${suffix}`;
+                }
+              }
+              // Start the animation
+              window.requestAnimationFrame(animate);
+              // Stop observing this element after animation is triggered
+              obs.unobserve(el);
+            }
+          });
+        },
+        {
+          threshold: 0.5,
+        }
+      );
+      counters.forEach((el) => counterObserver.observe(el));
+    } else {
+      // If IntersectionObserver isn't available, set counters instantly
+      counters.forEach((el) => {
+        const target = el.getAttribute('data-target') || el.textContent;
+        const suffix = el.getAttribute('data-suffix') || '';
+        el.textContent = `${target}${suffix}`;
+      });
+    }
+
+    // Hero entrance animations using GSAP. If GSAP is available we
+    // animate the hero columns on page load for a dramatic entrance.
+    if (typeof gsap !== 'undefined') {
+      const heroText = document.querySelector('.hero-col-text');
+      const heroImage = document.querySelector('.hero-col-image');
+      if (heroText && heroImage) {
+        gsap.from(heroText, { x: -60, opacity: 0, duration: 1.0, ease: 'power3.out' });
+        gsap.from(heroImage, { x: 60, opacity: 0, duration: 1.2, ease: 'power3.out' });
+      }
+    }
   });
 })();
