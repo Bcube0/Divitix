@@ -107,6 +107,21 @@
     }
 
     // ------------------------------------------------------------------
+    // Header scroll effect
+    // ------------------------------------------------------------------
+    // Add a .scrolled class to the header when the page is scrolled down
+    const header = document.querySelector('.header');
+    function onScroll() {
+      if (!header) return;
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    }
+    window.addEventListener('scroll', onScroll);
+
+    // ------------------------------------------------------------------
     // Testimonials slider
     // ------------------------------------------------------------------
     (function initTestimonials() {
