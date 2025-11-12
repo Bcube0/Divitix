@@ -20,13 +20,17 @@
     fresh and optimistic feel. Darker text colours ensure legibility on the
     bright backgrounds while two accent hues bring subtle vibrancy.
   */
-  --primary: #fdfdfd;       /* main page background – off white */
-  --secondary: #f7fbf9;     /* secondary background for panels and sections */
-  --accent: #7ecf8a;        /* pastel green accent */
-  --accent2: #f7b7c9;       /* pastel pink accent */
-  --neutral-dark: #ffffff;  /* light surface for cards */
-  --neutral-light: #2f4858; /* primary text colour (dark slate) */
-  --accent-yellow: #fff3b0; /* soft pastel yellow for highlights */
+  /*
+    Updated pastel palette inspired by the new banner. The tones are
+    softer and include muted blues, light purples and warm neutrals.
+  */
+  --primary: #fefcfb;         /* main page background – very light cream */
+  --secondary: #f5f9fe;       /* secondary background – pale blue */
+  --accent: #b5cfff;          /* primary accent – pastel sky blue */
+  --accent2: #d7c2f6;         /* secondary accent – soft lavender */
+  --neutral-dark: #ffffff;    /* light surface for cards */
+  --neutral-light: #3a4452;   /* primary text colour – muted dark blue */
+  --accent-yellow: #fcefdc;   /* gentle warm neutral for highlights */
 }
 
 body {
