@@ -52,40 +52,8 @@
 
     <!-- Blog listing -->
     <section class="blogs">
-      <div class="container blog-list">
-        <!-- Blog card 1 -->
-        <div class="blog-card">
-          <img src="../images/portfolio1.png" alt="Blog cover 1" />
-          <div class="blog-card-content">
-            <h3>Crafting UX for Modern Startups</h3>
-            <p>
-              Discover how thoughtful design can accelerate growth for early-stage companies.
-            </p>
-            <a href="#" target="_blank">Read More →</a>
-          </div>
-        </div>
-        <!-- Blog card 2 -->
-        <div class="blog-card">
-          <img src="../images/portfolio2.png" alt="Blog cover 2" />
-          <div class="blog-card-content">
-            <h3>Driving Growth with Data</h3>
-            <p>
-              Learn how to leverage analytics and SEO to amplify your brand's reach.
-            </p>
-            <a href="#" target="_blank">Read More →</a>
-          </div>
-        </div>
-        <!-- Blog card 3 -->
-        <div class="blog-card">
-          <img src="../images/portfolio3.png" alt="Blog cover 3" />
-          <div class="blog-card-content">
-            <h3>The Future of Web Development</h3>
-            <p>
-              Explore emerging technologies that are shaping the digital landscape.
-            </p>
-            <a href="#" target="_blank">Read More →</a>
-          </div>
-        </div>
+      <div class="container blog-list" id="blog-list">
+        <!-- Blog posts will be dynamically injected here via JavaScript. -->
       </div>
     </section>
 
@@ -138,5 +106,64 @@
     </footer>
 
     <script src="../js/script.js"></script>
+    <script>
+      // Dynamic blog feed. Define your latest posts here. Each entry can link
+      // to a LinkedIn article, Medium post or other external resource. To add
+      // a new post simply append another object to the array.
+      document.addEventListener('DOMContentLoaded', () => {
+        const posts = [
+          {
+            title: 'Chronochronicles: A Look Back at Memorable Tournaments',
+            description: 'Relive the excitement as we recap some of the most unforgettable esports moments.',
+            image: '../images/portfolio1.png',
+            link: 'https://www.linkedin.com/company/dvitix'
+          },
+          {
+            title: 'Building Brand Trust through Design',
+            description: 'Why authenticity and aesthetics matter for startups and how to achieve both.',
+            image: '../images/portfolio2.png',
+            link: 'https://www.linkedin.com/company/dvitix'
+          },
+          {
+            title: 'SEO Myths Debunked',
+            description: 'Separate fact from fiction when it comes to search engine optimisation.',
+            image: '../images/portfolio3.png',
+            link: 'https://www.linkedin.com/company/dvitix'
+          }
+        ];
+        const list = document.getElementById('blog-list');
+        if (!list) return;
+        posts.forEach((post) => {
+          // Create the card container
+          const card = document.createElement('div');
+          card.className = 'blog-card';
+          // Image
+          const img = document.createElement('img');
+          img.src = post.image;
+          img.alt = post.title;
+          card.appendChild(img);
+          // Content wrapper
+          const content = document.createElement('div');
+          content.className = 'blog-card-content';
+          // Heading
+          const h3 = document.createElement('h3');
+          h3.textContent = post.title;
+          content.appendChild(h3);
+          // Description
+          const p = document.createElement('p');
+          p.textContent = post.description;
+          content.appendChild(p);
+          // Link
+          const a = document.createElement('a');
+          a.href = post.link;
+          a.target = '_blank';
+          a.textContent = 'Read More →';
+          content.appendChild(a);
+          // Append content to card and card to list
+          card.appendChild(content);
+          list.appendChild(card);
+        });
+      });
+    </script>
   </body>
 </html>

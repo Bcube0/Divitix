@@ -112,22 +112,26 @@
         </div>
       </div>
     </section>
-    <!-- Worked With Logos Section -->
+    <!-- Worked With Logos Section (Marquee) -->
     <section class="worked-with">
       <div class="container">
         <h2 class="section-title reveal fade-in-up">Worked With</h2>
-        <div class="logos-grid">
-          <div class="logo-item reveal scale-in">
-            <span>TechCorp</span>
-          </div>
-          <div class="logo-item reveal scale-in" data-delay="0.1">
-            <span>InnovateX</span>
-          </div>
-          <div class="logo-item reveal scale-in" data-delay="0.2">
-            <span>StarLabs</span>
-          </div>
-          <div class="logo-item reveal scale-in" data-delay="0.3">
-            <span>NextGen</span>
+        <div class="logos-marquee">
+          <div class="marquee-content">
+            <!-- First iteration of partner logos -->
+            <div class="logo-item"><span>TechCorp</span></div>
+            <div class="logo-item"><span>InnovateX</span></div>
+            <div class="logo-item"><span>StarLabs</span></div>
+            <div class="logo-item"><span>NextGen</span></div>
+            <div class="logo-item"><span>AlphaSystems</span></div>
+            <div class="logo-item"><span>BetaWorks</span></div>
+            <!-- Duplicate logos for seamless scrolling -->
+            <div class="logo-item"><span>TechCorp</span></div>
+            <div class="logo-item"><span>InnovateX</span></div>
+            <div class="logo-item"><span>StarLabs</span></div>
+            <div class="logo-item"><span>NextGen</span></div>
+            <div class="logo-item"><span>AlphaSystems</span></div>
+            <div class="logo-item"><span>BetaWorks</span></div>
           </div>
         </div>
       </div>
@@ -160,59 +164,72 @@
       </div>
       </div>
     </section>
-    <!-- Packages Section -->
+    <!-- Packages Section with interactive flip cards -->
     <section class="packages" id="packages">
       <div class="container">
         <h2 class="section-title reveal fade-in-up">Packages &amp; Services</h2>
         <div class="packages-grid">
-          <!-- Basic Web Package -->
-          <div class="package-card reveal fade-in-left">
-            <i>💻</i>
-            <h3>Basic Web Package</h3>
-            <p>Perfect for startups and sole traders seeking a polished online presence.</p>
-            <ul>
-              <li><span class="check-icon">✓</span> Custom template with your branding</li>
-              <li><span class="check-icon">✓</span> 1–3 responsive pages</li>
-              <li><span class="check-icon">✓</span> Contact form &amp; analytics</li>
-              <li><span class="check-icon">✓</span> Starter SEO setup</li>
-            </ul>
-            <p class="price">From $1,000–3,000 AUD</p>
+          <!-- Basic Web Package Flip Card -->
+          <div class="flip-card reveal fade-in-left">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <div class="package-icon">💻</div>
+                <h3>Basic Web Package</h3>
+                <p>Perfect for startups &amp; sole traders.</p>
+              </div>
+              <div class="flip-card-back">
+                <h3>Basic Web Package</h3>
+                <ul>
+                  <li><span class="check-icon">✓</span> Custom template with your branding</li>
+                  <li><span class="check-icon">✓</span> 1–3 responsive pages</li>
+                  <li><span class="check-icon">✓</span> Contact form &amp; analytics</li>
+                  <li><span class="check-icon">✓</span> Starter SEO setup</li>
+                </ul>
+                <p class="price">From $1,000–3,000 AUD</p>
+              </div>
+            </div>
           </div>
-          <!-- Standard Web + SEO Package -->
-          <div class="package-card reveal fade-in-up" data-delay="0.1">
-            <i>📦</i>
-            <h3>Standard Web + SEO</h3>
-            <p>Designed for growing businesses demanding both design and optimisation.</p>
-            <ul>
-              <li><span class="check-icon">✓</span> Custom design up to 10 pages</li>
-              <li><span class="check-icon">✓</span> Blog &amp; CMS integration</li>
-              <li><span class="check-icon">✓</span> Advanced forms &amp; booking tools</li>
-              <li><span class="check-icon">✓</span> On‑page SEO &amp; keyword research</li>
-            </ul>
-            <p class="price">From $3,000–8,000 AUD<br /><small>SEO retainer from $1,200/month</small></p>
+          <!-- Standard Web + SEO Flip Card -->
+          <div class="flip-card reveal fade-in-up" data-delay="0.1">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <div class="package-icon">📦</div>
+                <h3>Standard Web + SEO</h3>
+                <p>For growing businesses.</p>
+              </div>
+              <div class="flip-card-back">
+                <h3>Standard Web + SEO</h3>
+                <ul>
+                  <li><span class="check-icon">✓</span> Custom design up to 10 pages</li>
+                  <li><span class="check-icon">✓</span> Blog &amp; CMS integration</li>
+                  <li><span class="check-icon">✓</span> Advanced forms &amp; booking tools</li>
+                  <li><span class="check-icon">✓</span> On‑page SEO &amp; keyword research</li>
+                </ul>
+                <p class="price">From $3,000–8,000 AUD<br /><small>SEO retainer from $1,200/month</small></p>
+              </div>
+            </div>
           </div>
-          <!-- SEO Booster Plan -->
-          <div class="package-card reveal fade-in-right" data-delay="0.2">
-            <i>🚀</i>
-            <h3>SEO Booster Plan</h3>
-            <p>Ongoing optimisation to improve visibility and drive organic traffic.</p>
-            <ul>
-              <li><span class="check-icon">✓</span> Monthly keyword &amp; content strategy</li>
-              <li><span class="check-icon">✓</span> Technical &amp; on‑page optimisation</li>
-              <li><span class="check-icon">✓</span> Quality link building</li>
-              <li><span class="check-icon">✓</span> Detailed performance reports</li>
-            </ul>
-            <p class="price">From $1,200–2,500 AUD / month</p>
+          <!-- SEO Booster Plan Flip Card -->
+          <div class="flip-card reveal fade-in-right" data-delay="0.2">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <div class="package-icon">🚀</div>
+                <h3>SEO Booster Plan</h3>
+                <p>Optimise &amp; boost your reach.</p>
+              </div>
+              <div class="flip-card-back">
+                <h3>SEO Booster Plan</h3>
+                <ul>
+                  <li><span class="check-icon">✓</span> Monthly keyword &amp; content strategy</li>
+                  <li><span class="check-icon">✓</span> Technical &amp; on‑page optimisation</li>
+                  <li><span class="check-icon">✓</span> Quality link building</li>
+                  <li><span class="check-icon">✓</span> Detailed performance reports</li>
+                </ul>
+                <p class="price">From $1,200–2,500 AUD / month</p>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-    <!-- Call to Action -->
-    <section class="cta">
-      <div class="container cta-content reveal scale-in">
-        <h2>Ready to bring your vision to life?</h2>
-        <p>Partner with Dvitix and turn your ideas into vibrant digital experiences.</p>
-        <a href="contact/index.html" class="btn btn-primary">Contact Us</a>
       </div>
     </section>
     <!-- Footer -->

@@ -14,16 +14,19 @@
 /* Colour palette variables for the new elegant theme */
 :root {
   /*
-    The palette aims for a soft yet professional aesthetic. Deep blues anchor
-    the background while gentle pastel accents bring warmth. Neutral light
-    tones ensure readability and balance throughout the design.
+    Spring-inspired colour palette
+
+    We shift away from deep blues into light, nature‑inspired pastels for a
+    fresh and optimistic feel. Darker text colours ensure legibility on the
+    bright backgrounds while two accent hues bring subtle vibrancy.
   */
-  --primary: #0a0e23;      /* base dark blue used for page background */
-  --secondary: #1f2a40;    /* secondary blue for panels and cards */
-  --accent: #5b8cff;       /* soft sky blue accent */
-  --accent2: #ef8cb4;      /* blush pink accent */
-  --neutral-dark: #192336; /* dark surface for cards */
-  --neutral-light: #f5f7fa;/* light text colour */
+  --primary: #fdfdfd;       /* main page background – off white */
+  --secondary: #f7fbf9;     /* secondary background for panels and sections */
+  --accent: #7ecf8a;        /* pastel green accent */
+  --accent2: #f7b7c9;       /* pastel pink accent */
+  --neutral-dark: #ffffff;  /* light surface for cards */
+  --neutral-light: #2f4858; /* primary text colour (dark slate) */
+  --accent-yellow: #fff3b0; /* soft pastel yellow for highlights */
 }
 
 body {
@@ -32,6 +35,7 @@ body {
   background-color: var(--primary);
   color: var(--neutral-light);
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
 /*
@@ -53,9 +57,11 @@ a {
 }
 
 /* Header and navigation */
+/* Header adopts a lighter background for spring while retaining a subtle
+   shadow to separate it from the page content. */
 .header {
-  background-color: var(--neutral-dark);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+  background-color: var(--secondary);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -70,6 +76,7 @@ a {
   padding: 0 20px;
 }
 
+/* Logo colour now uses the primary green accent to stand out on a light header. */
 .logo a {
   font-size: 1.6rem;
   font-weight: 700;
@@ -84,6 +91,7 @@ a {
   padding: 0;
 }
 
+/* Navigation links adopt the dark text colour by default. */
 .nav-list a {
   padding: 8px 12px;
   border-radius: 4px;
@@ -92,10 +100,12 @@ a {
 }
 
 /* Highlight current/hovered navigation links with a translucent accent background */
+/* Highlight current/hovered navigation links with a gentle pastel wash and
+   change text to the pink accent. */
 .nav-list a:hover,
 .nav-list a.active {
-  background-color: rgba(0, 230, 254, 0.2);
-  color: var(--accent);
+  background-color: rgba(126, 207, 138, 0.15);
+  color: var(--accent2);
 }
 
 /* Generic containers and sections */
@@ -115,7 +125,8 @@ a {
 
 .hero {
   position: relative;
-  background-image: linear-gradient(140deg, var(--secondary) 0%, var(--primary) 100%);
+  /* Pastel gradient for hero sections on subpages */
+  background-image: linear-gradient(135deg, var(--secondary) 0%, var(--accent-yellow) 60%, var(--accent2) 100%);
   color: var(--neutral-light);
   padding: 140px 20px;
   text-align: center;
@@ -125,20 +136,8 @@ a {
 /* Starfield overlay for hero section */
 .hero::before,
 .hero::after {
-  content: '';
-  position: absolute;
-  top: -100%;
-  left: -100%;
-  width: 300%;
-  height: 300%;
-  background-image:
-    radial-gradient(1px 1px at 20% 30%, rgba(255, 255, 255, 0.6) 50%, transparent 50%),
-    radial-gradient(1px 1px at 70% 80%, rgba(255, 255, 255, 0.4) 50%, transparent 50%),
-    radial-gradient(1px 1px at 50% 50%, rgba(255, 255, 255, 0.5) 50%, transparent 50%),
-    radial-gradient(1px 1px at 90% 20%, rgba(255, 255, 255, 0.5) 50%, transparent 50%);
-  animation: hero-stars 80s linear infinite;
-  opacity: 0.3;
-  pointer-events: none;
+  /* Disable starfield overlay for the spring theme by hiding pseudo-elements */
+  content: none;
 }
 
 .hero::after {
@@ -185,14 +184,14 @@ a {
 /* Gradient buttons with neon accent */
 .btn-primary {
   background-image: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
-  color: var(--primary);
+  color: var(--neutral-light);
   border: none;
   font-weight: 600;
 }
 
 .btn-primary:hover {
   background-image: linear-gradient(135deg, var(--accent2) 0%, var(--accent) 100%);
-  color: var(--primary);
+  color: var(--neutral-light);
 }
 
 /* Grid layouts */
@@ -213,11 +212,11 @@ a {
 .project-item,
 .services-section .service-card {
   background-color: var(--neutral-dark);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 12px;
   padding: 30px;
   text-align: center;
-  box-shadow: 0 0 10px rgba(0, 230, 254, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -239,16 +238,17 @@ a {
 .project-item:hover,
 .services-section .service-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 0 15px rgba(255, 110, 199, 0.35);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
 /* Icons use neon accent colours */
+/* Use the green accent for icons to match the spring palette */
 .feature-icon,
 .step-icon,
 .services-section .service-card i {
   font-size: 2.2rem;
   margin-bottom: 10px;
-  color: var(--accent2);
+  color: var(--accent);
 }
 
 
@@ -319,7 +319,8 @@ a {
 
 /* Footer */
 .footer {
-  background-image: linear-gradient(180deg, var(--neutral-dark) 0%, #070a1d 100%);
+  /* Light footer background using the primary and secondary colours */
+  background-image: linear-gradient(180deg, var(--secondary) 0%, var(--primary) 100%);
   color: var(--neutral-light);
   padding: 0; /* padding handled by CTA and grid sections */
 }
@@ -347,10 +348,10 @@ a {
 /* Link styling defined in the .footer-links section below */
 
 .footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
   text-align: center;
   font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(47, 72, 88, 0.6);
   padding: 20px;
 }
 
@@ -362,12 +363,12 @@ a {
 .footer-cta {
   text-align: center;
   padding: 60px 20px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 .footer-cta-title {
   font-size: 1.8rem;
   margin-bottom: 20px;
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Poppins', sans-serif;
   color: var(--neutral-light);
 }
 .footer-cta .btn {
@@ -435,22 +436,18 @@ a {
 
 /* Inline SVG icons for contact and social sections */
 .footer-contact img,
+/* Contact and social icons inherit their natural colour in the light footer */
+.footer-contact img,
 .footer-social .social-icons img {
   width: 20px;
   height: 20px;
   margin-right: 8px;
-  /* Invert colours so black SVGs appear light on the dark footer */
-  filter: invert(1);
+  filter: none;
 }
 
 /* Social icons adjustments */
 .social-icons a {
-  /*
-    Display social icons inside circular containers to make them stand
-    out on the dark background. We use inline-flex so that the icons
-    remain centered both horizontally and vertically, and apply a subtle
-    border and glow on hover for a futuristic feel.
-  */
+  /* Circular social buttons with pastel border and subtle shadow on light footer */
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -458,7 +455,7 @@ a {
   height: 40px;
   margin-right: 12px;
   color: var(--neutral-light);
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: rgba(0, 0, 0, 0.05);
   border: 1px solid var(--accent);
   border-radius: 50%;
   font-size: 1.4rem;
@@ -469,9 +466,9 @@ a {
 }
 /* Glow and colour shift on hover */
 .social-icons a:hover {
-  color: var(--accent);
-  background-color: rgba(255, 255, 255, 0.1);
-  box-shadow: 0 0 8px var(--accent2);
+  color: var(--accent2);
+  background-color: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   transform: translateY(-3px);
 }
 
@@ -639,8 +636,9 @@ a {
 /* ------------------------------------------------------------------ */
 
 .elegant-hero {
-  padding: 120px 0;
-  background-color: var(--primary);
+  padding: 120px 20px;
+  /* Soft gradient blending the secondary background with a pastel yellow and pink */
+  background-image: linear-gradient(135deg, var(--secondary) 0%, var(--accent-yellow) 50%, var(--accent2) 100%);
 }
 
 .hero-row {
@@ -660,6 +658,7 @@ a {
   font-size: 3rem;
   font-weight: 600;
   margin-bottom: 20px;
+  /* Use the primary accent colour for the main headline */
   color: var(--accent);
 }
 
@@ -683,7 +682,7 @@ a {
   max-width: 500px;
   height: auto;
   border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
 
 @media (max-width: 768px) {
@@ -767,9 +766,11 @@ a {
    centre the content to draw the eye. */
 .stats {
   padding: 80px 20px;
+  /* Light gradient backdrop for stats */
   background-image: linear-gradient(160deg, var(--secondary) 0%, var(--primary) 100%);
   color: var(--neutral-light);
   text-align: center;
+  background-attachment: fixed; /* parallax effect */
 }
 
 /* Grid layout for statistic cards. Each card takes equal space and
@@ -826,6 +827,7 @@ a {
   background-image: linear-gradient(180deg, var(--primary) 0%, var(--secondary) 100%);
   color: var(--neutral-light);
   text-align: center;
+  background-attachment: fixed; /* parallax effect */
 }
 
 /* Grid to hold partner logos. We set a generous gap and a flexible
@@ -870,4 +872,284 @@ a {
 .logo-item img {
   max-width: 100%;
   max-height: 70px;
+}
+
+/* ------------------------------------------------------------------ */
+/* Flip Card Styles for Packages                                      */
+/* ------------------------------------------------------------------ */
+
+/* Container provides perspective so that 3D flip appears realistic. */
+.flip-card {
+  perspective: 1000px;
+  /* Ensure the card maintains a reasonable height so content layers overlap properly */
+  min-height: 360px;
+}
+
+/* Inner wrapper that will be rotated on hover. We set the transition
+   and preserve-3d so child faces render correctly. */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Rotate the inner wrapper when hovering over the parent. */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Shared face styles. Cards are light with a subtle shadow and dark text. */
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background-color: var(--neutral-dark);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--neutral-light);
+  text-align: center;
+}
+
+/* Front face adjustments – emphasise the icon and heading. */
+.flip-card-front h3 {
+  margin: 15px 0 10px;
+  font-size: 1.3rem;
+  color: var(--neutral-light);
+}
+.flip-card-front p {
+  margin: 0;
+  color: rgba(47, 72, 88, 0.8);
+}
+
+/* Back face rotated so it appears when flipped. */
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+
+.flip-card-back h3 {
+  margin-top: 0;
+  font-size: 1.3rem;
+  color: var(--neutral-light);
+}
+
+.flip-card-back ul {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0;
+  text-align: left;
+}
+.flip-card-back li {
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+}
+.flip-card-back .check-icon {
+  color: var(--accent);
+  margin-right: 6px;
+  font-weight: bold;
+}
+.flip-card-back .price {
+  font-weight: 600;
+  margin-top: 10px;
+  color: var(--accent2);
+  text-align: center;
+}
+
+/* ------------------------------------------------------------------ */
+/* Testimonials Slider                                                */
+/* ------------------------------------------------------------------ */
+
+/* Section wrapper for testimonials. A gentle gradient and centred
+   layout convey openness and friendliness. */
+.testimonials {
+  padding: 80px 20px;
+  background-image: linear-gradient(180deg, var(--secondary) 0%, var(--primary) 100%);
+  color: var(--neutral-light);
+  text-align: center;
+}
+
+/* Container holds the slides and dots. It constrains the width on
+   larger screens and centres itself. */
+.testimonial-container {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Each testimonial slide is hidden by default and shown when the
+   `active` class is applied via JavaScript. We use a soft card
+   aesthetic consistent with other sections. */
+.testimonial-slide {
+  display: none;
+  background-color: var(--neutral-dark);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  padding: 40px 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  min-height: 220px;
+}
+.testimonial-slide.active {
+  display: block;
+}
+
+/* Quote styling emphasises the testimonial text. */
+.testimonial-quote {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: var(--neutral-light);
+  font-style: italic;
+}
+
+/* Author styling uses the green accent to draw attention. */
+.testimonial-author {
+  font-weight: 600;
+  color: var(--accent);
+}
+
+/* Dots navigation for testimonials. Each dot represents a slide.
+   The active dot is filled with the accent colour. */
+.testimonial-dots {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+.testimonial-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.testimonial-dot.active {
+  background-color: var(--accent);
+}
+
+/* ------------------------------------------------------------------ */
+/* Worked With Logo Marquee                                          */
+/* ------------------------------------------------------------------ */
+
+/* Convert the logos section into a scrolling marquee. The wrapper
+   hides overflow and the inner content scrolls continuously from
+   right to left. */
+.logos-marquee {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  max-width: 100%;
+}
+
+/* The content is an inline-block container that repeats the logos
+   twice to create a seamless loop. It scrolls using keyframe
+   animation defined below. */
+.logos-marquee .marquee-content {
+  display: inline-block;
+  animation: marquee-scroll 20s linear infinite;
+}
+
+/* Individual logo items inside the marquee are inline-flex and have
+   spacing. They reuse the existing .logo-item styling but remove
+   the fixed height so they can align naturally. */
+.logos-marquee .logo-item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 40px;
+  width: 160px;
+  height: 100px;
+}
+
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Ensure the text inside logo items remains styled correctly when
+   they are used within the marquee context. */
+.logos-marquee .logo-item span {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+/* ------------------------------------------------------------------ */
+/* Timeline Section                                                  */
+/* ------------------------------------------------------------------ */
+
+/* Wrapper for the timeline section, using a complementary gradient. */
+.timeline-section {
+  padding: 80px 20px;
+  background-image: linear-gradient(160deg, var(--secondary) 0%, var(--primary) 100%);
+  color: var(--neutral-light);
+}
+
+/* The timeline container holds items and the vertical line indicator. */
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 40px auto;
+  padding-left: 30px;
+}
+
+/* Draw the vertical line using a pseudo-element. */
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 10px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: var(--accent);
+}
+
+/* Each timeline entry has a marker and descriptive content. */
+.timeline-item {
+  position: relative;
+  margin-bottom: 50px;
+  padding-left: 40px;
+}
+
+/* The marker is represented by a circle. */
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -1px;
+  top: 4px;
+  width: 18px;
+  height: 18px;
+  background-color: var(--accent2);
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+}
+
+/* Timeline headings and descriptions follow our colour palette. */
+.timeline-item h4 {
+  margin: 0 0 8px;
+  font-size: 1.3rem;
+  color: var(--accent);
+  font-weight: 600;
+}
+.timeline-item p {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--neutral-light);
+  line-height: 1.5;
 }

@@ -105,5 +105,36 @@
         gsap.from(heroImage, { x: 60, opacity: 0, duration: 1.2, ease: 'power3.out' });
       }
     }
+
+    // ------------------------------------------------------------------
+    // Testimonials slider
+    // ------------------------------------------------------------------
+    (function initTestimonials() {
+      const slides = document.querySelectorAll('.testimonial-slide');
+      const dots = document.querySelectorAll('.testimonial-dot');
+      if (slides.length === 0 || dots.length === 0) return;
+      let current = 0;
+      function showSlide(index) {
+        slides.forEach((slide, i) => {
+          slide.classList.toggle('active', i === index);
+        });
+        dots.forEach((dot, i) => {
+          dot.classList.toggle('active', i === index);
+        });
+        current = index;
+      }
+      // Attach click events to dots
+      dots.forEach((dot) => {
+        dot.addEventListener('click', () => {
+          const idx = parseInt(dot.getAttribute('data-slide'), 10);
+          showSlide(idx);
+        });
+      });
+      // Auto cycle through testimonials every 7 seconds
+      setInterval(() => {
+        const nextIndex = (current + 1) % slides.length;
+        showSlide(nextIndex);
+      }, 7000);
+    })();
   });
 })();
